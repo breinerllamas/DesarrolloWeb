@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformaciones</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Transformaciones</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Transform</h2>
+      <article>
+        <p>
+          Con HTML5 y CSS3 podemos utilizar la propiedad 'transform' para
+          modificar características de un < div > como la posición (position),
+          la rotación (rotation), la escala (scale) o el -menos utilizado- el
+          sesgo (skew). Este cambio de posición, tamaño o rotación se produce al
+          instante (no hay animación en este cambio, para ello habría que
+          utilizar 'transition' o 'animation'). Para poder comprobar estas
+          propiedades vamos a utilizar un DIV que contiene el dibujo sencillo de
+          un astronauta (creado con SVG).
+        </p>
+        <div id="astronauta"></div>
+        <p></p>
+        <p>
+          A este < div > le vamos a aplicar todas las transformaciones de
+          posición, rotación, escala y sesgo, partiendo de esta posición,
+          tamaño, escala y apariencia original. Es muy importante tener en
+          cuenta que para que 'transform' funcione en todos los navegadores
+          deberemos repetir las propiedades anteponiendo los prefijos de cada
+          uno de los navegadores: <strong>-webkit-</strong> (para Chrome y
+          Safari) <strong>-moz-</strong> (para Firefox).
+          <strong>-o-</strong> (para Opera) <strong>-ms-</strong> (para
+          versiones modernas de Internet Explorer).
+        </p>
+      </article>
+      <h2>Desplazamiento (translate)</h2>
+      <article>
+        <p>
+          El movimiento se basa en la suma o resta de píxeles en su posición
+          horizontal y vertical respecto a la posición en la que se encuentra el
+          objeto en este momento. Con números positivos se desplaza el objeto
+          hacia la derecha y hacia abajo y con números negativos se desplaza
+          hacia arriba y hacia la izquierda. Así, en este ejemplo, el < div >
+          del astronauta se desplaza 200 píxeles hacia la derecha y 5 píxeles
+          hacia abajo respecto a su posición original.
+        </p>
+        <div id="translate"></div>
+        <p></p>
+        <p>
+          También es posible utilizar porcentajes, si queremos colocar este
+          astronauta en la mitad horizontal de la pantalla (osea 'centrar el
+          astronauta horizontalmente') podemos indicar un porcentaje (300%), en
+          vez de utilizar píxeles.
+        </p>
+        <div id="translate-porcentaje"></div>
+        <p></p>
+        <p>
+          La rotación se basa en los grados de rotación (de 0º a 360º). El eje
+          de rotación siempre está situado en el centro del < div > y los grados
+          se especifican añadiendo 'deg' después del valor (por ejemplo: 90deg).
+          Si se indican valores positivos en los grados de rotación, el objeto
+          rota hacia la derecha. Con los grados especificados en números
+          negativos, el objeto rota hacia la izquierda. (Así, teniendo en cuenta
+          que una vuelta entera equivale a 360º, se aprecia el mismo resultado
+          con 350deg, que con -10deg). En este caso, el < div > del astronauta
+          rota 90 grados hacia la derecha tomando como eje de rotación el centro
+          del < div > donde se encuentra el astronauta (que no siempre coincide
+          con el contenido de dicho < div >).
+        </p>
+        <div id="rotate"></div>
+      </article>
+      <h2>Escala (scale)</h2>
+      <article>
+        <p>
+          La escala de un objeto se basa en una escala horizontal, seguida de la
+          vertical, siendo 1 la escala original (correspondiente al tamaño
+          original). Para obtener un porcentaje se puede multiplicar el valor
+          indicado por 100, así un valor de '2' (2x100=200) representaría un
+          200%, osea el doble de tamaño. Aumenta o disminuye de tamaño tomando
+          como eje el centro del < div >. En este caso, el < div > del
+          astronauta aumenta de tamaño no proporcionalmente. Aumenta el doble de
+          anchura (2x100= 200%) y tan solo un 175% de altura (1.75x100= 175%).
+        </p>
+        <div id="scale"></div>
+        <p></p>
+        <p>
+          En este caso, el < div > del astronauta aumenta de tamaño no
+          proporcionalmente. Aumenta el doble de anchura (2x100= 200%) y tan
+          solo un 175% de altura (1.75x100= 175%).
+        </p>
+      </article>
+      <h2>Sesgo (skew)</h2>
+      <article>
+        <p>
+          Para definir el sesgo se indica primero el sesgo horizontal y
+          posteriormente el vertical, se pueden utilizar valores o positivos
+          según se requiera para la deformación. transform:skew(10,25);
+        </p>
+        <div id="skew"></div>
+      </article>
+      <h2>Múltiples transformaciones simultáneas</h2>
+      <article>
+        <p>
+          Se pueden indican tantas transformaciones como se deseen de manera
+          simultáneamente separando cada una de ellas por un espacio. En este
+          ejemplo, al < div > del astronauta se le aplica un desplazamiento
+          hacia la derecha de 200 píxeles, al mismo tiempo una rotación hacia la
+          derecha de 33 grados y finalmente una redución de tamaño proporcional
+          del 50%. transform:translate(200px, 0px) rotate(33deg) scale(0.5,0.5);
+        </p>
+        <div id="transform-multiple"></div>
+      </article>
+      <h2>Compatibilidad con todos los navegadores</h2>
+      <article>
+        <p>
+          Para que 'transform' funcione en todos los navegadores deberemos
+          repetir las propiedades anteponiendo los prefijos de cada uno de los
+          navegadores: <strong>-webkit-</strong> (para Chrome y Safari)
+          <strong>-moz-</strong> (para Firefox) <strong>-o-</strong> (para
+          Opera) <strong>-ms-</strong> (para versiones modernas de Internet
+          Explorer).
+        </p>
+      </article>
+    </section>
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

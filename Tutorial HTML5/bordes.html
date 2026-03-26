@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bordes</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Bordes y redondeados</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Lineas separadoras horizontales</h2>
+      <article>
+        <p>
+          Existen dos formas para crear una línea separadora horizontal y una
+          única forma para crear una línea separadora vertical. Para crear una
+          línea horizontal la forma fácil y rápida es utilizar la etiqueta < hr
+          >, que no se cierra y que crea una línea horizontal simple.
+        </p>
+        <p>
+          En lo referente a los tipos de bordes existen las siguientes
+          posibilidades: <br /><b>None:</b> sin linea <br /><b>solid:</b> linea
+          continua <br /><b>dotted:</b> linea punteada <br /><b>dashed:</b>
+          linea discontinua <br /><b>inset:</b> linea con el color bajo relieve
+          <br /><b>outset:</b> linea con el color sobre relieve, que simula el
+          relieve
+        </p>
+        <h3>Ejemplo:</h3>
+        <h3>Ejemplo:</h3>
+        <p>Solid</p>
+        <hr style="border: 2px solid black" />
+        <p>Dotted</p>
+        <hr style="border: 2px dotted red" />
+        <p>Dashed</p>
+        <hr style="border: 2px dashed blue" />
+        <p>Inset</p>
+        <hr style="border: 2px inset green" />
+        <p>Outset</p>
+        <hr style="border: 2px outset orange" />
+      </article>
+      <h2>Lineas separadoras verticales</h2>
+      <article>
+        <p>
+          Para crear líneas verticales tenemos que definir uno de los 4 bordes
+          que tiene una caja (< div >), utilizando una (o varias) de estas
+          propiedades: border-top: 1px solid red; border-bottom: 2px dotted
+          green; border-right: 1px dashed #3C5391; border-left: 1px inset
+          orange; Si se quiere añadir una única línea habría que añadir sólo una
+          de estas líneas.
+        </p>
+        <h3>Ejemplo:</h3>
+        <div id="lineas-verticales"></div>
+      </article>
+      <h2>Bordes simples</h2>
+      <article>
+        <p>
+          Para poder indicar un borde determinado con un color y un grosor
+          concreto para un < div >, dentro del código CSS, utilizamos la
+          propiedad 'border', que utiliza el siguiente formato: border: 2px
+          solid grey; En este ejemplo, el valor '2px establece el grosor del
+          borde en 2 píxeles, el valor 'solid' especifica el tipo de borde,
+          mientras que finalmente se indica el color, ya sea utilizando el
+          nombre de color, o bien el código de color en hexadecimal
+          (anteponiendo el símbolo #). En lo referente a los tipos de bordes
+          vistos anteriormente:
+        </p>
+        <h3>Ejemplo con dotted (linea punteada):</h3>
+        <div id="borde-simple"></div>
+      </article>
+      <h2>Bordes redondeados</h2>
+      <article>
+        <p>
+          Con la propiedad border-radius tenemos la posibilidad de crear < div >
+          con las esquinas con bordes redondeados, pudiendo especificar la
+          suavidad de las esquinas de manera conjunta o cada una de las esquinas
+          por separado. Para poder visualizar una esquina con borde redondeado,
+          además de la propiedad border-radius, tenemos que definir un borde
+          normal (con border) y/o indicar un color de fondo (con
+          background-color).
+        </p>
+        <h3>Ejemplo:</h3>
+        <div id="borde-redondeado"></div>
+        <p>
+          Por último, con 'border-radius' especificamos que la suavidad de las 4
+          esquinas sea de 22 píxeles (el valor 0 correspondería a una esquina
+          totalmente recta). Si queremos indicar diferentes valores para cada
+          una de las esquinas, tendríamos que especificar los 4 valores en el
+          siguiente orden:
+        </p>
+        <ul>
+          <li>1º: esquina superior/izquierda</li>
+          <li>2º: superior/derecha</li>
+          <li>3º: inferior/derecha</li>
+          <li>4º: inferior/izquierda</li>
+        </ul>
+        <h3>Ejemplo</h3>
+        <div id="borde-redondeado2"></div>
+        <p>
+          Si únicamente queremos establecer la suavidad de una sola esquina
+          tenemos la posibilidad de definir por separado la suavidad de cada una
+          de las esquinas, utilizando uno de los siguientes propiedades:
+        </p>
+        <ul>
+          <li>border-top-left-radius: 20px;</li>
+          <li>border-top-right-radius: 20px;</li>
+          <li>border-bottom-right-radius: 20px;</li>
+          <li>border-bottom-left-radius: 20px;</li>
+        </ul>
+      </article>
+    </section>
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

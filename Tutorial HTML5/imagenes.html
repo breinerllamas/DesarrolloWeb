@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagenes</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Imagenes</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Palabras Magicas</h2>
+      <article>
+        <h3>Colores de fondo:</h3>
+        <p>
+          En HTML5 existen algunas propiedades CSS que nos permiten añadir
+          fondos de página, ya sea de un simple color (opaco o con
+          transparencia), una imagen o múltiples imágenes una encima de la otra.
+        </p>
+        <p>
+          Para especificar un color de fondo, ya sea para todo el html, o sólo
+          para un < div > o sección del html utilizamos la propiedad
+          background-color, y si deseamos especificar un color con un
+          determinado índice de transparencia y queremos utilizar el código de
+          color RGB, podemos usar la siguiente variante, en la que el 4º valor
+          es la cantidad de transparencia (siendo 0 la transparencia total y 1
+          la opacidad total):
+          <strong> background-color:rgba(255,255,0,0.4); </strong>
+        </p>
+        <h3>Ejemplo:</h3>
+        <div id="fondo-color">Ultimo valor en 0.4</div>
+        <div id="fondo-color2">Ultimo valor en 1</div>
+        <p></p>
+        <h3>Imágen de fondo</h3>
+        <p>
+          Si además queremos añadir una imagen de fondo (para todo el < body >,
+          o únicamente como fondo de un < div >), usaremos la propiedad:
+          background-url.
+        </p>
+        <h3>Ejemplo:</h3>
+        <div id="fondo-imagen"></div>
+        <p></p>
+        <> Si no añadimos ningún otro parámetro la imagen se irá repitiendo
+        hasta ocupar toda la ventana html (tipo mosaico). Si por el contrario
+        únicamente queremos que se repita una sola vez (horizontal o
+        verticalmente), tenemos que utilizar la propiedad background-repeat.
+        Como posibles valores para background-repeat encontramos:
+        <ul>
+          <li>
+            no-repeat: la imagen no se repite, se añade sólo una copia de la
+            imagen.
+          </li>
+          <li>
+            repeat-x: la imagen se repite sólo horizontalmente, creando una
+            única cenefa horizontal en la parte superior de la pantalla.
+          </li>
+          <li>
+            repeat-y: la imagen se repite sólo verticalmente, creando una única
+            cenefa vertical en la parte izquierda de la pantalla.
+          </li>
+        </ul>
+        <h3>Ejemplo con background-repeat: repeat-y;</h3>
+        <div id="fondo-imagen2"></div>
+        <p></p>
+        <p>
+          Otro parámetro que podemos utilizar es background-size, que sirve para
+          determinar el tamaño de la imagen. No obstante, se recomienda siempre
+          que se utilice el tamaño 100% de la imagen. Resulta tremendamente
+          inapropiado crear una imagen el doble de grande y posteriorme
+          reducirla utilizando este parámetro. Es mucho mejor, más rápido, más
+          fiable y más inteligente crear la imagen al tamaño en el que se tendrá
+          que mostrar la imagen. No obstante, para el resto de casos, podemos
+          especificar el tamaño en píxeles o en porcentaje (respecto al tamaño
+          total de la pantalla) utilizando únicamente uno de estas dos
+          declaraciones CSS: background-size:200px 100px; background-size:25%;
+        </p>
+      </article>
+      <h2>Superposición de múltiples imágenes como fondo</h2>
+      <article>
+        <p>
+          Como novedad, en HTML5, ahora tenemos la posibilidad de construir un
+          fondo de pantalla o de un < div > superponiendo diferentes imágenes
+          individuales (como si fueran capas en Photoshop).
+        </p>
+        <h3>Ejemplo:</h3>
+        <div id="fondo-multiple"></div>
+        <p>
+          En este ejemplo se utilizan 3 imágenes superpuestas entre sí para
+          formar un fondo común. El orden de indicación de las imágenes es muy
+          importante, ya que de esta manera se define el orden de apilamiento,
+          es decir, así se especifica qué imagen estará por encima de las otras.
+          Así, la primera imagen (unimayor.png) se colocará por encima de las
+          restantes, mientras que la última (rayas.png) estará por debajo de
+          todas ellas.
+        </p>
+        <p>
+          Es evidente que esta técnica tiene su lógica cuando al menos las
+          primeras imágenes tienen fondo transparente, ya que sino la primera
+          imagen (con fondo opaco) taparía totalmente las imágenes que hubieran
+          quedado por detrás.
+        </p>
+      </article>
+    </section>
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

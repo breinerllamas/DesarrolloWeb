@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2"
+    />
+    <title>Responsive</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Responsive</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="colores.html"> Colores </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Múltiples resoluciones</h2>
+      <article>
+        <p>
+          Los llamados <strong>media queries</strong> son una serie de funciones
+          que incorpora CSS3 para que las páginas web se adapten o adopten una
+          maquetación diferente según la resolución en la que se muestre la
+          página, ya sea en navegadores sobre ordenadores con grandes monitores,
+          tablets, móviles o incluso displays de neveras, yogurteras, coches o
+          lavadoras conectadas a Internet.
+        </p>
+        <p>
+          Existe una muy amplia variedad de resoluciones de pantalla. Para
+          intentar
+          <strong>agruparlas en grupos estándares</strong> podemos utilizar los
+          siguientes rangos:
+        </p>
+        <ul>
+          <li>
+            Resoluciones iguales o menores de <strong>480px</strong>: para
+            <strong>móviles</strong>.
+          </li>
+          <li>
+            Resoluciones de <strong>481px</strong> a <strong>768px</strong>:
+            para <strong>tablets</strong>.
+          </li>
+          <li>
+            Resoluciones mayores de <strong>768px</strong>: para
+            <strong>ordenadores</strong>.
+          </li>
+        </ul>
+      </article>
+
+      <h2>¿Dónde colocarlos?</h2>
+      <article>
+        <p>
+          Como cada página HTML tiene su propia estructura y necesita una
+          adaptación personalizada, este código CSS se suele añadir en el
+          <strong>&lt;style&gt;</strong> del <strong>&lt;head&gt;</strong>,
+          dentro de la propia página HTML, pero
+          <strong>siempre al final</strong>, justo antes de cerrar la etiqueta
+          <strong>&lt;/style&gt;</strong>.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;head&gt;</code><br />
+          <code>&nbsp;&nbsp;&lt;style type="text/css"&gt;</code><br />
+          <br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;body &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: white;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&#125;</code><br />
+          <br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;#bloque1 &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 15px;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&#125;</code><br />
+          <br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;/* ← Primero todos los selectores normales
+            */</code
+          ><br />
+          <br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;/* ← Después los mediaqueries, siempre al
+            final */</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;@media only screen and (max-width: 320px)
+            &#123;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color:
+            red;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#bloque1 &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:
+            12px;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&#125;</code><br />
+          <br />
+          <code>&nbsp;&nbsp;&lt;/style&gt;</code><br />
+          <code>&lt;/head&gt;</code>
+        </div>
+        <p>
+          Primero se colocan todos los selectores habituales de la página (ya
+          sea en el <code>&lt;head&gt;</code> o en un archivo CSS externo) y
+          <strong>después</strong> de todos ellos se colocan los mediaqueries
+          con sus selectores CSS dentro.
+        </p>
+      </article>
+      <h2>Funcionamiento de los Mediaqueries</h2>
+      <article>
+        <p>
+          Un <strong>mediaquerie</strong> agrupa diferentes selectores CSS e
+          identifica en qué condiciones deben ejecutarse. Normalmente estas
+          condiciones están relacionadas con la
+          <strong>resolución horizontal</strong>
+          del dispositivo donde se visualiza la página.
+        </p>
+        <p>
+          En el ejemplo anterior
+          <code>@media only screen and (max-width: 320px)</code> se indica que
+          si la resolución horizontal es <strong>menor de 320 píxeles</strong>
+          se cambiará el color de fondo a rojo y el texto del
+          <code>#bloque1</code> pasará a 12px. Si no se cumple esa condición, se
+          aplican los selectores CSS normales (fondo blanco y 14px).
+        </p>
+      </article>
+
+      <h2>Sintaxis</h2>
+      <article>
+        <p>Tenemos varias posibilidades según el rango que queramos cubrir:</p>
+
+        <h3>max-width — resolución menor que la indicada</h3>
+        <div class="codigo-ejemplo">
+          <code>@media only screen and (max-width: 320px) &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;/* Se ejecuta cuando la resolución sea menor de 320px
+            */</code
+          ><br />
+          <code>&#125;</code>
+        </div>
+
+        <h3>min-width — resolución mayor que la indicada</h3>
+        <div class="codigo-ejemplo">
+          <code>@media only screen and (min-width: 980px) &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;/* Se ejecuta cuando la resolución sea mayor de 980px
+            */</code
+          ><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>Los dos parámetros clave son:</p>
+        <ul>
+          <li>
+            <strong>max-width</strong>: "cuando la resolución horizontal sea
+            <em>menor</em> que la indicada".
+          </li>
+          <li>
+            <strong>min-width</strong>: "cuando la resolución horizontal sea
+            <em>mayor</em> que la indicada".
+          </li>
+        </ul>
+
+        <h3>Combinando dos rangos</h3>
+        <p>
+          También se pueden combinar <strong>min-width</strong> y
+          <strong>max-width</strong> para ajustar un rango concreto de
+          resolución:
+        </p>
+        <div class="codigo-ejemplo">
+          <code
+            >@media only screen and (min-width: 320px) and (max-width: 480px)
+            &#123;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;/* Se ejecuta solo entre 320px y 480px de resolución
+            */</code
+          ><br />
+          <code>&#125;</code>
+        </div>
+      </article>
+      <h2>Exclusivo para móviles y tablets</h2>
+      <article>
+        <p>
+          En un móvil no existe una ventana del navegador que se pueda
+          redimensionar: toda la pantalla es la ventana. Además, cuando se
+          visualiza una página en un móvil, el contenido se escala para
+          mostrarse al completo, por lo que generalmente la página aparece muy
+          pequeña. Para resolver estos dos problemas existen dos soluciones:
+        </p>
+
+        <h3>Usar device-width en los mediaqueries</h3>
+        <p>
+          Añadiendo <strong>device</strong> hacemos referencia a la anchura real
+          del dispositivo y no al ancho de la ventana del navegador:
+        </p>
+        <div class="codigo-ejemplo">
+          <code
+            >@media only screen and (min-device-width: 320px) and
+            (max-device-width: 480px) &#123;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;/* Solo para dispositivos con ancho real entre 320 y
+            480px */</code
+          ><br />
+          <code>&#125;</code>
+        </div>
+
+        <h3>El metadata viewport</h3>
+        <p>
+          Para que el contenido no se escale automáticamente debemos añadir el
+          siguiente <strong>&lt;meta&gt;</strong> dentro del
+          <strong>&lt;head&gt;</strong>:
+        </p>
+        <div class="codigo-ejemplo">
+          <code
+            >&lt;meta name="viewport" content="width=device-width,
+            initial-scale=1, maximum-scale=2"&gt;</code
+          >
+        </div>
+        <ul>
+          <li>
+            <strong>width=device-width</strong>: el contenido se adapta a la
+            resolución horizontal real del dispositivo.
+          </li>
+          <li>
+            <strong>initial-scale=1</strong>: escala inicial del 100% (con "2"
+            sería el doble; se admiten decimales como "0.75" o "1.25").
+          </li>
+          <li>
+            <strong>maximum-scale=2</strong>: zoom máximo que podrá hacer el
+            usuario (en este caso el doble del tamaño original).
+          </li>
+          <li>
+            <strong>minimum-scale=1</strong>: impide que el usuario reduzca el
+            contenido por debajo del tamaño original.
+          </li>
+        </ul>
+
+        <hr />
+
+        <h3>Comparativa de resultados en móvil</h3>
+
+        <div class="tabla-comparativa">
+          <div class="caso">
+            <p class="caso-titulo">❌ Sin mediaqueries — Sin viewport</p>
+            <p>
+              La página se escala automáticamente para visualizarse entera,
+              reduciendo todo el contenido aunque cupiera perfectamente en la
+              pantalla del dispositivo.
+            </p>
+          </div>
+
+          <div class="caso">
+            <p class="caso-titulo">
+              ⚠️ Con mediaqueries sin device — Sin viewport
+            </p>
+            <p>
+              Se visualiza exactamente igual que sin mediaqueries. Sin
+              <strong>viewport</strong>, usar mediaqueries sin
+              <code>device</code> en móviles y tablets carece de utilidad.
+            </p>
+          </div>
+
+          <div class="caso">
+            <p class="caso-titulo">
+              ⚠️ Con mediaqueries con device — Sin viewport
+            </p>
+            <p>
+              Los mediaqueries funcionan correctamente, pero la página se
+              muestra a escala muy reducida al no tener viewport, para permitir
+              ver el contenido completo.
+            </p>
+          </div>
+
+          <div class="caso caso-correcto">
+            <p class="caso-titulo">✅ Con mediaqueries — Con viewport</p>
+            <p>
+              Para que los mediaqueries funcionen correctamente es
+              <strong>imprescindible</strong> el uso del metadata
+              <code>viewport</code> con <code>width=device-width</code> e
+              <code>initial-scale=1</code>, independientemente del uso o no de
+              <code>device</code> en los mediaqueries.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

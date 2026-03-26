@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Video</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Diferentes estándares de vídeo</h2>
+      <article>
+        <p>
+          Aunque el código HTML5 para la inserción de vídeo directamente en
+          HTML5 es muy sencillo, todavía tiene un único inconveniente. No todos
+          los navegadores aceptan todos los formatos de vídeo existentes. De
+          hecho de los 3 estándares existentes, el único navegador que los
+          acepta a todos es Chrome. Así que, si queremos que el vídeo se pueda
+          visualizar en todos los navegadores tendremos que añadir el mismo
+          vídeo en distintos formatos. Actualmente existen 3 estándares de vídeo
+          que utilizan códecs diferentes y que vienen impulsados por grandes
+          empresas.
+        </p>
+        <ul>
+          <li>
+            <strong>El formato MP4</strong> (ficheros con extensión .mp4 o .mov)
+            que bajo licencia utiliza el códec H264 (el mismo que utiliza
+            Flash). Es impulsado por Apple y Microsoft.
+          </li>
+          <li>
+            <strong>El formato OGG</strong> (ficheros con extensión .ogv) que
+            utiliza el códec On2VP8 es gratuito. Impulsado por Mozilla, Opera y
+            Firefox.
+          </li>
+          <li>
+            <strong>El formato WebM</strong> (ficheros con extensión .webm)
+            también es gratuito e impulsado por los mismos que apoyan el formato
+            OGG (Mozilla, Opera y Firefox).
+          </li>
+        </ul>
+      </article>
+      <h2><code>&lt;video&gt;</code></h2>
+      <article>
+        <p>
+          El código HTML estándar para visualizar un único formato de vídeo
+          sería:
+        </p>
+        <pre>
+  <code>
+    &lt;video&gt;
+        &lt;source src="video.ogv" type="video/ogg"/&gt;
+    &lt;/video&gt;
+  </code>
+</pre>
+
+        <p>
+          En el tag < video > es posible incorporar un gran número de atributos
+          que nos ayudan a poder controlar mejor el video, como son:
+        </p>
+        <ul>
+          <li>
+            <strong>width:</strong> Indica la anchura del vídeo, expresada en
+            píxeles (px) o en porcentaje (%)
+          </li>
+          <li>
+            <strong>height:</strong> Indica la altura del vídeo, expresada en
+            píxeles (px) o en porcentaje (%)
+          </li>
+          <li>
+            <strong>controls:</strong> Establece si tendrá la barra de
+            navegación (play, stop, volumen...) o no
+          </li>
+          <li>
+            <strong>autoplay:</strong> Indica si el vídeo se inicia detenido o
+            ya aparece por defecto reproduciéndose
+          </li>
+          <li>
+            <strong>loop:</strong> Establece si al acabar el vídeo, éste debe
+            volver a empezar o no
+          </li>
+          <li>
+            <strong>muted:</strong> Indica si el audio se reproduce o se
+            reproduce sin audio
+          </li>
+          <li>
+            <strong>preload:</strong> Indica si el vídeo se empieza a cargar
+            cuando el navegador carga la página html
+          </li>
+          <li>
+            <strong>poster:</strong> Da la posibilidad de establecer una imagen
+            (jpg, gif o png) como fotograma inicial del video
+          </li>
+        </ul>
+      </article>
+      <h2>Ejemplo práctico</h2>
+      <article>
+        <div id="video">
+          <video
+            width="400"
+            height="300"
+            controls
+            loop
+            muted
+            poster="Imagenes/astronauta.png.jpg"
+          >
+            <source src="Imagenes/video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

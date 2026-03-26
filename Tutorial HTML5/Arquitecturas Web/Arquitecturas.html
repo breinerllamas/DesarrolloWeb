@@ -1,0 +1,364 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitecturas Frontend y Backend</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1b2a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar-custom {
+            background: linear-gradient(135deg, #1a2332, #0d1b2a);
+        }
+        footer {
+            background-color: #1a2332;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="background: linear-gradient(135deg, #d4af37 0%, #c49f2a 100%); color: #0d1b2a; padding: 60px 0; text-align: center; margin-bottom: 30px;">
+        <h1 style="font-size: 3rem; margin-bottom: 15px;">Arquitecturas Frontend y Backend</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Explorando las tecnologias del desarrollo web</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="font-weight: bold;">Webb</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#frontend">Frontend</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#backend">Backend</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div style="margin: 30px 0; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div id="carouselEjemplo" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../Imagenes/banner1.png" class="d-block w-100" alt="Frontend">
+                        <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 10px;">
+                            <h5>Frontend Development</h5>
+                            <p>Interfaz de usuario, experiencia visual e interactividad</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Imagenes/banner2.png" class="d-block w-100" alt="Backend">
+                        <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 10px;">
+                            <h5>Backend Development</h5>
+                            <p>Lógica de negocio, bases de datos y servidores</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Imagenes/banner3.png" class="d-block w-100" alt="Full Stack">
+                        <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 10px;">
+                            <h5>Full Stack Architecture</h5>
+                            <p>Integración completa frontend + backend</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselEjemplo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselEjemplo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="frontend" style="background: white; border-radius: 15px; padding: 30px; margin: 30px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h2 style="color: #d4af37; border-left: 5px solid #d4af37; padding-left: 15px;">Frontend - La Capa Visual</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">El <strong>frontend</strong> es todo lo que el usuario ve e interactúa en una aplicación web. Es la parte que se ejecuta en el <strong>navegador (browser)</strong> del cliente.</p>
+            
+            <h3 style="color: #d4af37; margin-top: 25px;">Tecnologías principales del Frontend</h3>
+            <div class="row" style="margin: 20px 0;">
+                <div class="col-md-4" style="margin-bottom: 15px;">
+                    <div style="background: linear-gradient(135deg, #d4af37, #c49f2a); color: #0d1b2a; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>HTML</h4>
+                        <p style="margin: 0;">Estructura y contenido</p>
+                        <small>HyperText Markup Language</small>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 15px;">
+                    <div style="background: linear-gradient(135deg, #d4af37, #c49f2a); color: #0d1b2a; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>CSS</h4>
+                        <p style="margin: 0;">Estilos y diseño</p>
+                        <small>Cascading Style Sheets</small>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 15px;">
+                    <div style="background: linear-gradient(135deg, #d4af37, #c49f2a); color: #0d1b2a; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>JavaScript</h4>
+                        <p style="margin: 0;">Interactividad y lógica</p>
+                        <small>Lenguaje de programación</small>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #d4af37; margin-top: 15px;">Frameworks Frontend populares</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="background: #f8f9fa; margin: 10px 0; padding: 10px; border-radius: 8px;"><strong>React</strong> - Desarrollado por Facebook, basado en componentes</li>
+                <li style="background: #f8f9fa; margin: 10px 0; padding: 10px; border-radius: 8px;"><strong>Vue.js</strong> - Progresivo y fácil de aprender</li>
+                <li style="background: #f8f9fa; margin: 10px 0; padding: 10px; border-radius: 8px;"><strong>Angular</strong> - Framework completo de Google</li>
+                <li style="background: #f8f9fa; margin: 10px 0; padding: 10px; border-radius: 8px;"><strong>Bootstrap</strong> - Framework CSS para diseño responsivo</li>
+            </ul>
+        </div>
+
+        <!-- Sección Backend -->
+        <div id="backend" style="background: white; border-radius: 15px; padding: 30px; margin: 30px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h2 style="color: #d4af37; border-left: 5px solid #d4af37; padding-left: 15px;">Backend - El Motor Oculto</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">El <strong>backend</strong> es la parte que no ve el usuario, pero que hace funcionar la aplicación: servidores, bases de datos, APIs y lógica de negocio.</p>
+            
+            <h3 style="color: #d4af37; margin-top: 25px;">Tecnologías principales del Backend</h3>
+            <div class="row" style="margin: 20px 0;">
+                <div class="col-md-3" style="margin-bottom: 15px;">
+                    <div style="background: #1a2332; color: #d4af37; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4>Node.js</h4>
+                        <p style="margin: 0;">JavaScript en servidor</p>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-bottom: 15px;">
+                    <div style="background: #1a2332; color: #d4af37; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4>Python</h4>
+                        <p style="margin: 0;">Django, Flask</p>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-bottom: 15px;">
+                    <div style="background: #1a2332; color: #d4af37; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4>Java</h4>
+                        <p style="margin: 0;">Spring Boot</p>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-bottom: 15px;">
+                    <div style="background: #1a2332; color: #d4af37; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4>PHP</h4>
+                        <p style="margin: 0;">Laravel, Symfony</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #d4af37; margin-top: 15px;">Bases de datos comunes</h3>
+            <ul>
+                <li><strong>SQL</strong> - MySQL, PostgreSQL, SQL Server (relacionales)</li>
+                <li><strong>NoSQL</strong> - MongoDB, Firebase, Redis (no relacionales)</li>
+            </ul>
+        </div>
+        <div id="tecnologias" style="background: white; border-radius: 15px; padding: 30px; margin: 30px 0;">
+            <h2 style="color: #1a2332; text-align: center; margin-bottom: 30px;">Comparativa de Tecnologías Web</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <tr style="background: linear-gradient(135deg, #d4af37, #c49f2a); color: #0d1b2a;">
+                        <th style="padding: 15px; border: 1px solid #ddd; font-size: 1.1rem;" colspan="3">ARQUITECTURAS WEB</th>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <th style="padding: 12px; border: 1px solid #ddd; width: 33%;">Frontend</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; width: 33%;">Backend</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; width: 34%;">Base de Datos</th>
+                    </tr>
+                    
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd; vertical-align: top;">
+                            <strong>HTML5</strong><br>
+                            <strong>CSS3</strong><br>
+                            <strong>JavaScript</strong><br>
+                            <strong>React / Vue / Angular</strong><br>
+                            <strong>Bootstrap / Tailwind</strong>
+                        </td>
+                        <td style="padding: 12px; border: 1px solid #ddd; vertical-align: top;">
+                            <strong>Node.js</strong><br>
+                            <strong>Python (Django/Flask)</strong><br>
+                            <strong>Java (Spring Boot)</strong><br>
+                            <strong>PHP (Laravel)</strong><br>
+                            <strong>Ruby on Rails</strong>
+                        </td>
+                        <td style="padding: 12px; border: 1px solid #ddd; vertical-align: top;">
+                            <strong>MySQL</strong><br>
+                            <strong>PostgreSQL</strong><br>
+                            <strong>MongoDB</strong><br>
+                            <strong>Redis</strong><br>
+                            <strong>Firebase</strong>
+                        </td>
+                    </tr>
+                    <tr style="background: #e9ecef;">
+                        <td style="padding: 12px; border: 1px solid #ddd;" colspan="3">
+                            <strong>¿Qué es una URL?</strong><br>
+                            <span style="font-family: monospace;">https://www.ejemplo.com/pagina?query=valor#seccion</span><br>
+                            <small>URL = Uniform Resource Locator. Es la dirección única que identifica un recurso en la web.</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd; background: #fff3e0;" colspan="2">
+                            <strong>¿Qué es un Browser (Navegador)?</strong><br>
+                            Es el software que interpreta HTML, CSS y JavaScript para mostrar páginas web. Ejemplos: Chrome, Firefox, Safari, Edge.
+                        </td>
+                        <td style="padding: 12px; border: 1px solid #ddd; background: #e8f5e9;" rowspan="2">
+                            <strong>¿Qué es una Aplicación Web?</strong><br>
+                            Es un software que se ejecuta en un navegador web, sin necesidad de instalación. Accesible desde cualquier dispositivo con internet.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd; background: #fff3e0;" colspan="2">
+                            <strong>Petición HTTP</strong><br>
+                            GET, POST, PUT, DELETE - Verbos que definen acciones entre cliente y servidor.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="conceptos" style="background: white; border-radius: 15px; padding: 30px; margin: 30px 0;">
+            <h2 style="color: #1a2332; text-align: center;">Conceptos Fundamentales</h2>
+            
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-6" style="margin-bottom: 20px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
+                        <h3 style="color: #d4af37;">¿Qué es una Aplicación Web?</h3>
+                        <p>Software accesible mediante navegador web, almacenado en servidores remotos. Ejemplos: Gmail, Facebook, Google Docs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-bottom: 20px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
+                        <h3 style="color: #d4af37;">¿Qué es un Servidor Web?</h3>
+                        <p>Computadora o programa que entrega contenido web (HTML, CSS, JS) a los navegadores que lo solicitan.</p>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-bottom: 20px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
+                        <h3 style="color: #d4af37;">API (Application Programming Interface)</h3>
+                        <p>Conjunto de reglas que permite comunicación entre diferentes aplicaciones. Las APIs REST son las más comunes en web.</p>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-bottom: 20px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
+                        <h3 style="color: #d4af37;">Protocolo HTTP/HTTPS</h3>
+                        <p>Protocolo de transferencia de hipertexto. HTTPS es su versión segura con cifrado SSL/TLS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: white; border-radius: 15px; padding: 30px; margin: 30px 0;">
+            <h2 style="color: #1a2332; text-align: center;">Componentes Bootstrap</h2>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-header" style="background: #d4af37; color: #0d1b2a;">
+                            Sistema Grid
+                        </div>
+                        <div class="card-body">
+                            <p>Bootstrap usa un sistema de 12 columnas responsive con clases como <code>.col-md-4</code>, <code>.row</code>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-header" style="background: #d4af37; color: #0d1b2a;">
+                            Componentes UI
+                        </div>
+                        <div class="card-body">
+                            <p>Botones, modales, tooltips, dropdowns, alertas y más componentes pre-diseñados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-header" style="background: #d4af37; color: #0d1b2a;">
+                            Responsive Design
+                        </div>
+                        <div class="card-body">
+                            <p>Clases como <code>.img-fluid</code>, <code>.container-fluid</code> para adaptarse a cualquier dispositivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: white; border-radius: 15px; padding: 30px; margin: 30px 0;">
+            <h2 style="color: #1a2332; text-align: center;">Más información sobre Arquitecturas</h2>
+            
+            <div class="accordion" id="accordionInfo">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                            MVC (Model-View-Controller)
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#accordionInfo">
+                        <div class="accordion-body">
+                            Patrón de arquitectura que separa la aplicación en tres capas: <strong>Modelo</strong> (datos), <strong>Vista</strong> (interfaz) y <strong>Controlador</strong> (lógica). Usado en frameworks como Laravel, Django, Spring MVC.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                            REST API
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionInfo">
+                        <div class="accordion-body">
+                            Estilo arquitectónico para diseñar APIs. Usa métodos HTTP (GET, POST, PUT, DELETE) y URLs para representar recursos. Es la forma más común de comunicación frontend-backend.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                            SPA (Single Page Application)
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionInfo">
+                        <div class="accordion-body">
+                            Aplicación que carga una sola página HTML y actualiza dinámicamente el contenido sin recargar. Ejemplos: Gmail, Facebook, aplicaciones hechas con React, Vue o Angular.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                            Contenedores y Microservicios
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionInfo">
+                        <div class="accordion-body">
+                            Arquitectura moderna donde la aplicación se divide en pequeños servicios independientes. Usa tecnologías como Docker, Kubernetes, y servicios en la nube (AWS, Azure, GCP).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #d4af37, #c49f2a); border-radius: 15px; padding: 20px; margin: 30px 0; text-align: center; color: #0d1b2a;">
+            <p style="margin-bottom: 10px;"><strong>Recordatorio:</strong> Frontend + Backend + Base de Datos = Aplicación Web Completa</p>
+            <p style="margin-bottom: 0;">La web evoluciona constantemente. ¡Mantente actualizado!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Arquitecturas Frontend y Backend - Material educativo sobre desarrollo web moderno</p>
+        <p>© 2026 - Tecnologías: HTML, Bootstrap, JavaScript | Conceptos: URL, Browser, Aplicaciones Web</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

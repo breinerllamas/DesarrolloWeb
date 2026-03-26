@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Formularios</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Formularios en HTML5</h2>
+      <article>
+        <p>
+          Los formularios fueron una de las primeras mejoras que se dieron a
+          conocer de HTML5, sobre todo por su gran capacidad de
+          <strong>autovalidación</strong> de manera extremadamente fácil y sin
+          necesidad de utilizar JavaScript. Todas las etiquetas del formulario
+          deben estar ubicadas dentro de <strong>&lt;form&gt;</strong> y
+          <strong>&lt;/form&gt;</strong>.
+        </p>
+        <p>
+          En el atributo <strong>action</strong> se indica la ruta del fichero
+          (por ejemplo un .php) que procesará los datos, y con
+          <strong>method</strong> se elige el método de envío. El método
+          <em>post</em> garantiza mayor seguridad para los datos enviados.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;form action="enviarmail.php" method="post"&gt; ... &lt;/form&gt;</code>
+        </div>
+      </article>
+      <h2>Ejemplo práctico</h2>
+      <article>
+        <p>
+          A continuación se muestra un formulario de registro que utiliza las
+          principales etiquetas nuevas de HTML5. Observa cómo algunos campos
+          son obligatorios (borde rojo/azul según el estado), cómo el correo
+          electrónico valida su formato automáticamente y cómo el primer campo
+          recibe el foco al cargar la página gracias a <strong>autofocus</strong>.
+        </p>
+
+        <form id="form-ejemplo" action="#" method="post">
+
+          <fieldset>
+            <legend>Datos personales</legend>
+
+            <div class="campo">
+              <label for="nombre">Tu nombre:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                size="40"
+                autofocus
+                title="Escribe tu nombre real. Es el que aparecerá en tu perfil."
+                placeholder="Ej: Ana García"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="correo">Correo electrónico: <span class="obligatorio">(*)</span></label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                size="40"
+                required
+                placeholder="usuario@dominio.com"
+                title="Escribe tu correo electrónico. Debe contener @ y un dominio válido."
+              />
+            </div>
+
+            <div class="campo">
+              <label for="password">Contraseña: <span class="obligatorio">(*)</span></label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                size="20"
+                required
+                title="Escribe la contraseña que desees. Mínimo 6 caracteres."
+              />
+            </div>
+
+            <div class="campo">
+              <label for="nacimiento">Fecha de nacimiento:</label>
+              <input
+                type="date"
+                id="nacimiento"
+                name="nacimiento"
+                value="2000-01-01"
+                title="La fecha en la que naciste."
+              />
+            </div>
+
+            <div class="campo">
+              <label for="telefono">Teléfono:</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="Ej: 300 123 4567"
+                title="Introduce tu número de teléfono."
+              />
+            </div>
+
+            <div class="campo">
+              <label for="web">Sitio web:</label>
+              <input
+                type="url"
+                id="web"
+                name="web"
+                placeholder="https://www.ejemplo.com"
+                title="Introduce una URL válida incluyendo https://"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferencias</legend>
+
+            <div class="campo">
+              <label for="personaje">Personaje preferido:</label>
+              <select id="personaje" name="personaje">
+                <option value="">-- Elige uno --</option>
+                <option value="flash">Flash Gordon</option>
+                <option value="ming">Ming, el despiadado</option>
+                <option value="aura">La Princesa Aura</option>
+                <option value="vultan">Príncipe Vultan</option>
+                <option value="dale">Dale Arden</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label>Sexo:</label>
+              <div class="grupo-radio">
+                <label><input type="radio" name="sexo" value="mujer" checked /> Mujer</label>
+                <label><input type="radio" name="sexo" value="hombre" /> Hombre</label>
+                <label><input type="radio" name="sexo" value="ns" /> Prefiero no decirlo</label>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label>Destinos favoritos:</label>
+              <div class="grupo-checkbox">
+                <label><input type="checkbox" name="dest1" value="colombia" checked /> Colombia</label>
+                <label><input type="checkbox" name="dest2" value="japon" /> Japón</label>
+                <label><input type="checkbox" name="dest3" value="noruega" /> Noruega</label>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="adiccion">¿Cuántos cómics lees a la semana? (<span id="val-range">2</span>)</label>
+              <input
+                type="range"
+                id="adiccion"
+                name="adiccion"
+                min="1"
+                max="7"
+                value="2"
+                step="1"
+                title="Desliza para indicar cuántos cómics lees por semana."
+                oninput="document.getElementById('val-range').textContent = this.value"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="color-pref">Color favorito:</label>
+              <input
+                type="color"
+                id="color-pref"
+                name="color_preferido"
+                value="#6a8f89"
+                title="Elige tu color favorito."
+              />
+            </div>
+
+            <div class="campo">
+              <label for="comics">¿Cuántos cómics tienes?</label>
+              <input
+                type="number"
+                id="comics"
+                name="comics"
+                min="0"
+                max="9000"
+                step="1"
+                value="10"
+                title="Indica cuántos cómics tienes en tu colección."
+              />
+            </div>
+
+            <div class="campo">
+              <label for="archivo">Sube tu foto de perfil:</label>
+              <input type="file" id="archivo" name="archivo" accept="image/*" />
+            </div>
+
+            <div class="campo">
+              <label for="mensaje">Mensaje adicional:</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="4"
+                cols="40"
+                placeholder="Escribe aquí cualquier comentario..."
+                title="Campo de texto libre para comentarios."
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <div class="campo campo-submit">
+            <input type="submit" value="Enviar los datos" />
+            <input type="reset" value="Limpiar formulario" />
+          </div>
+
+        </form>
+
+        <p>
+            Primero vamos a ver algunas de las características de HTML5 que igual has pasado por alto:
+        </p>
+        <ul>
+            <li>De entrada, el cursor podría está situado por defecto dentro del primer campo, para que el usuario pueda escribir sin tener que hacer clic en él.</li>
+            <li>Si sitúas el cursor encima de cualquier campo podrás leer una explicación adicional sobre esa pregunta.</li>
+            <li>El segundo y tercer campo son obligatorios, por lo que -cuando estés en ellos- tendrán el borde rojo hasta que sean rellenados y de manera correcta.</li>
+            <li>El correo electrónico, además sólo aceptará el valor introducido si detecta una @ enmedio y un formato apropiado.</li>
+            <li>Además, el correo electrónico y otros campos ofrecen un valor de ejemplo que se elimina automáticamente al introducir cualquier valor.</li>
+            <li>Al pulsar el botón "Enviar los datos" sin haber introducido los campos obligatorios o bien el correo electrónico con un formato no válido aparecerá un mensaje de alerta con información adicional que informa de los errores encontrados.</li>
+        </ul>
+      </article>
+
+      <h2>Tipos de &lt;input&gt; más usados</h2>
+      <article>
+        <h3>text</h3>
+        <p>
+          Permite introducir texto normal. Con <strong>autofocus</strong> el
+Al mismo tiempo es posible añadir símbolos de OK/error después de cada campo que indican si existe algún error o son correctos.
+        </ul>
+      </article>
+
+      <h2>Tipos de &lt;input&gt; más usados</h2>
+      <article>
+        <h3>text</h3>
+        <p>
+          Permite introducir texto normal. Con <strong>autofocus</strong> el
+          cursor se sitúa automáticamente en el campo al cargar la página.
+          Con <strong>placeholder</strong> se muestra un texto de ejemplo en
+          gris que desaparece al escribir.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="text" autofocus placeholder="Tu nombre" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>email</h3>
+        <p>
+          Valida automáticamente que el valor introducido contenga una
+          <strong>@</strong> y un formato de dominio apropiado. Muy útil
+          combinado con <strong>required</strong>.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="email" required placeholder="usuario@dominio.com" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>password</h3>
+        <p>
+          Enmascara automáticamente los caracteres que escribe el usuario con
+          círculos, protegiendo la privacidad de la contraseña.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="password" required /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>date</h3>
+        <p>
+          Muestra un selector de calendario para que el usuario introduzca una
+          fecha. Con <strong>value</strong> se especifica la fecha inicial por
+          defecto.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="date" value="2000-01-01" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>range</h3>
+        <p>
+          Genera una barra deslizante (slider). Con <strong>min</strong>,
+          <strong>max</strong> y <strong>step</strong> se controlan los límites
+          e incrementos del valor.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="range" min="1" max="7" step="1" value="2" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>color</h3>
+        <p>
+          Muestra una paleta de colores para que el usuario seleccione un color.
+          Con <strong>value</strong> se indica el color inicial en hexadecimal.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="color" value="#FF0000" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>number</h3>
+        <p>
+          Permite introducir valores numéricos con botones + / −. Se controla
+          el rango válido con <strong>min</strong> y <strong>max</strong>.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="number" min="0" max="9000" step="1" value="10" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>radio y checkbox</h3>
+        <p>
+          <strong>radio</strong>: permite elegir <em>solo una</em> opción del
+          grupo (todos deben tener el mismo <em>name</em>).
+          <strong>checkbox</strong>: permite seleccionar <em>varias</em>
+          opciones a la vez (cada uno tiene un <em>name</em> diferente). Con
+          <strong>checked</strong> se marca una opción por defecto.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="radio" name="sexo" value="mujer" checked /&gt; Mujer</code><br />
+          <code>&lt;input type="checkbox" name="dest1" value="colombia" checked /&gt; Colombia</code>
+        </div>
+        <hr />
+
+        <h3>file</h3>
+        <p>
+          Permite seleccionar un fichero del disco duro del usuario. Con
+          <strong>accept</strong> se puede filtrar el tipo de archivo permitido.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="file" accept="image/*" /&gt;</code>
+        </div>
+        <hr />
+
+        <h3>submit y reset</h3>
+        <p>
+          <strong>submit</strong> envía los datos del formulario a la dirección
+          indicada en <strong>action</strong>. <strong>reset</strong> limpia
+          todos los campos volviendo a los valores iniciales. El texto del botón
+          se define con <strong>value</strong>.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;input type="submit" value="Enviar los datos" /&gt;</code><br />
+          <code>&lt;input type="reset" value="Limpiar formulario" /&gt;</code>
+        </div>
+      </article>
+
+      <h2>Atributos importantes</h2>
+      <article>
+        <ul>
+          <li><strong>required</strong>: El campo es obligatorio; sin rellenarlo no se envía el formulario.</li>
+          <li><strong>autofocus</strong>: El cursor se sitúa en este campo al cargar la página (solo uno por formulario).</li>
+          <li><strong>placeholder</strong>: Muestra un texto de ejemplo en gris que desaparece al escribir.</li>
+          <li><strong>title</strong>: Texto informativo que aparece al pasar el cursor por encima del campo.</li>
+          <li><strong>autocomplete</strong>: Permite el autocompletado del campo según entradas anteriores del usuario.</li>
+          <li><strong>value</strong>: Valor inicial del campo al cargar la página.</li>
+          <li><strong>name</strong>: Identificador del campo que se envía al servidor junto con su valor.</li>
+        </ul>
+      </article>
+
+      <h2>Estilos CSS y autovalidación visual</h2>
+      <article>
+        <p>
+          Con CSS3 podemos indicar visualmente el estado de cada campo usando
+          pseudoselectores:
+        </p>
+        <ul>
+          <li><strong>input[required]</strong>: aplica estilos a los campos obligatorios.</li>
+          <li><strong>input:invalid</strong>: aplica estilos cuando el valor introducido no es válido.</li>
+          <li><strong>input:valid</strong>: aplica estilos cuando el valor es correcto.</li>
+        </ul>
+        <div class="codigo-ejemplo">
+          <code>input[required] &#123; border-color: blue; box-shadow: 0 0 5px blue; &#125;</code><br />
+          <code>input:invalid  &#123; border-color: red;  box-shadow: 0 0 5px red; &#125;</code><br />
+          <code>input:valid    &#123; border-color: green; box-shadow: 0 0 5px green; &#125;</code>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

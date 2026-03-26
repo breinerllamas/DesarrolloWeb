@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posición</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Posición</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Posicionamiento de las cajas</h2>
+      <article>
+        <p>
+          Existen tres opciones de posicionamiento de las cajas dentro del <
+          body >
+        </p>
+        <div class="fila">
+          <div class="etiqueta">relative:</div>
+          <div class="contenido">
+            <p>Este es el tipo de posicionamiento por defecto.</p>
+            <p>
+              Las cajas o &lt;divs&gt; se posicionan siempre en relación al
+              resto de &lt;divs&gt;. Si se mueven o se modifica el tamaño de las
+              cajas anteriores, las cajas que hayan debajo se moverán.
+            </p>
+            <p>
+              Con este posicionamiento NO es posible colocar una caja encima de
+              otra.
+            </p>
+          </div>
+        </div>
+        <div class="ejemplo-relative">
+          <div class="caja-base">Caja normal</div>
+          <div class="caja-relative">Caja relative (movida 5px)</div>
+          <div class="caja-base">Caja normal</div>
+        </div>
+
+        <div class="fila">
+          <div class="etiqueta">absolute:</div>
+          <div class="contenido">
+            <p>
+              Al indicar un posicionamiento absoluto es posible colocar una caja
+              en una coordenada concreta sin importar el posicionamiento del
+              resto de cajas.
+            </p>
+            <p>Es posible que una caja esté encima de otra.</p>
+            <p>
+              Un ejemplo es el caso de la chincheta lila (que hay en la parte
+              superior de esta misma página), que se coloca por encima de otras
+              cajas, pero que al mover el scroll de la página se mueve como el
+              resto de elementos.
+            </p>
+          </div>
+        </div>
+        <div class="contenedor-absolute">
+          <div class="caja-absolute">Caja absolute</div>
+          Texto de fondo que la caja tapa
+        </div>
+
+        <div class="fila">
+          <div class="etiqueta">fixed:</div>
+          <div class="contenido">
+            <p>
+              Tiene las mismas características que el posicionamiento absoluto,
+              pero con la diferencia de que al mover el scroll del navegador la
+              caja con posicionamiento fijo NO se moverá del lugar donde ha sido
+              ubicada.
+            </p>
+            <p>
+              Un ejemplo es la bandera (ubicada en la parte superior derecha de
+              la pantalla), que está por encima del resto de elementos y se
+              queda fija en la esquina superior derecha.
+            </p>
+            <p>
+              Otro ejemplo es el &lt;footer&gt; inferior de esta página, que
+              está colocado fijo en la parte inferior de la ventana del
+              navegador.
+            </p>
+          </div>
+        </div>
+        <div class="caja-fixed">📌 Fija</div>
+        <p>
+          Se utilizaría únicamente una de los tres valores que siguen:
+          <strong
+            >#nombre_del_div{ position:relative; position:absolute;
+            position:fixed; }</strong
+          >
+        </p>
+        <p>
+          Al definir el posicionamiento como absolute o como fixed es necesario
+          indicar la posición o coordenada exacta en la que se desea ubicar la
+          caja (o < div >). Para ello podemos utilizar los siguientes valores:
+        </p>
+        <ul>
+          <li>
+            <strong>left</strong>: Especifica la coordenada horizontal,
+            empezando a contar desde el extremo izquierdo.
+          </li>
+          <li>
+            <strong>right</strong>: Especifica la coordenada horizontal,
+            empezando a contar desde el extremo derecho.
+          </li>
+          <li>
+            <strong>top</strong>: Especifica la coordenada vertical, empezando a
+            contar desde la parte superior.
+          </li>
+          <li>
+            <strong>bottom</strong>: Especifica la coordenada vertical,
+            empezando a contar desde la parte inferior.
+          </li>
+        </ul>
+        <p>
+          Por ejemplo, en el siguiente código se especifica un posicionamiento
+          fijo del < footer > (como es el caso de este html) en el que éste
+          siempre estará colocado en la parte inferior de la pantalla y en el
+          extremo izquierdo. Así, aunque hagamos más alto o más bajo la ventana
+          del navegador (puedes intentarlo) o exista más o menos contenido, el <
+          footer > siempre estará fijo en la parte inferior de la misma.
+          footer{position:fixed; bottom:0px; left:0px; }
+        </p>
+      </article>
+    </section>
+    <footer id="footer-posicion">
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

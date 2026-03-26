@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Columnas</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Columnas</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Columnas de texto</h2>
+      <article>
+        <p>
+          Con HTML5 y CSS3 se pueden crear textos en columnas de una manera muy
+          sencilla, pudiendo configurar tanto el espacio entre columnas como las
+          líneas de separación. Las tres propiedades clave son:
+        </p>
+
+        <h3>column-count</h3>
+        <p>
+          Define el <strong>número de columnas</strong> en las que se dividirá
+          el texto.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>column-count: 2;</code>
+        </div>
+
+        <h3>column-gap</h3>
+        <p>
+          Define el <strong>espacio mínimo en píxeles</strong> que existirá
+          entre las columnas.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>column-gap: 10px;</code>
+        </div>
+
+        <h3>column-rule</h3>
+        <p>
+          Define la <strong>línea separadora</strong> entre columnas. Acepta
+          tres valores en orden: grosor, tipo de línea y color.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>column-rule: 4px dotted gray;</code>
+        </div>
+      </article>
+      <h2>Ejemplo práctico paso a paso</h2>
+      <article>
+
+        <h3>Paso 1 — Escribimos el contenido dentro de un &lt;div&gt;</h3>
+        <p>
+          Todo el texto o lista que queramos mostrar en columnas debe estar
+          dentro de un <code>&lt;div&gt;</code> con un <strong>id</strong> para
+          poder referenciarlo desde CSS. En este ejemplo usamos
+          <code>id="columnas"</code> con una lista de reyes godos.
+        </p>
+        <p>
+          Se eliminan las etiquetas <strong>&lt;ul&gt;</strong> y
+          <strong>&lt;/ul&gt;</strong> para que el primer elemento no quede
+          vacío y las columnas no se descuadren.
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;div id="columnas"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Ataúlfo&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Sigerico&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Walia&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;...&lt;/li&gt;</code><br>
+          <code>&lt;/div&gt;</code>
+        </div>
+
+        <h3>Paso 2 — Añadimos el CSS</h3>
+        <p>
+          En el archivo CSS hacemos referencia al <code>id</code> del
+          <code>&lt;div&gt;</code> e indicamos el número de columnas, la
+          separación y el tipo de separador:
+        </p>
+        <div class="codigo-ejemplo">
+          <code>#columnas &#123;</code><br>
+          <code>&nbsp;&nbsp;column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;column-rule: 4px dotted gray;</code><br>
+          <code>&#125;</code>
+        </div>
+
+        <h3>Resultado — con bolitas</h3>
+        <div id="columnas-bolitas">
+          <li>Ataúlfo</li>
+          <li>Sigerico</li>
+          <li>Walia</li>
+          <li>Teodoredo</li>
+          <li>Turismundo</li>
+          <li>Teodorico</li>
+          <li>Eurico</li>
+          <li>Alarico II</li>
+          <li>Gesaleico</li>
+          <li>Amalarico</li>
+          <li>Teudis</li>
+          <li>Teudiselo</li>
+          <li>Agila I</li>
+          <li>Atanagildo</li>
+          <li>Liuva I</li>
+          <li>Leovigildo</li>
+        </div>
+
+        <p>
+          Si queremos ocultar las bolitas de la lista añadimos
+          <strong>list-style: none;</strong> al CSS:
+        </p>
+        <div class="codigo-ejemplo">
+          <code>#columnas &#123;</code><br>
+          <code>&nbsp;&nbsp;column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;column-rule: 4px double black;</code><br>
+          <code>&nbsp;&nbsp;list-style: none;</code><br>
+          <code>&#125;</code>
+        </div>
+
+        <h3>Resultado — sin bolitas</h3>
+        <div id="columnas-sin-bolitas">
+          <li>Ataúlfo</li>
+          <li>Sigerico</li>
+          <li>Walia</li>
+          <li>Teodoredo</li>
+          <li>Turismundo</li>
+          <li>Teodorico</li>
+          <li>Eurico</li>
+          <li>Alarico II</li>
+          <li>Gesaleico</li>
+          <li>Amalarico</li>
+          <li>Teudis</li>
+          <li>Teudiselo</li>
+          <li>Agila I</li>
+          <li>Atanagildo</li>
+          <li>Liuva I</li>
+          <li>Leovigildo</li>
+        </div>
+
+      </article>
+      <h2>Tipos de líneas</h2>
+      <article>
+        <p>
+          Los tipos de línea se usan tanto en <strong>column-rule</strong>
+          como en la propiedad <strong>border</strong>. Estos son todos los
+          valores disponibles:
+        </p>
+        <ul>
+          <li><strong>none</strong> — sin línea separadora.</li>
+          <li><strong>solid</strong> — línea sólida continua.</li>
+          <li><strong>dotted</strong> — línea punteada.</li>
+          <li><strong>dashed</strong> — línea discontinua (segmentos cortos).</li>
+          <li><strong>double</strong> — doble línea paralela.</li>
+          <li><strong>groove</strong> — línea en relieve 3D hacia adentro.</li>
+          <li><strong>ridge</strong> — línea en relieve 3D hacia afuera.</li>
+          <li><strong>inset</strong> — línea con color en bajorrelieve.</li>
+          <li><strong>outset</strong> — línea que simula el relieve.</li>
+        </ul>
+
+        <hr>
+
+        <h3>Solid</h3>
+        <div class="col-solid">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Dotted</h3>
+        <div class="col-dotted">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Dashed</h3>
+        <div class="col-dashed">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Double</h3>
+        <div class="col-double">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Groove</h3>
+        <div class="col-groove">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Ridge</h3>
+        <div class="col-ridge">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Inset</h3>
+        <div class="col-inset">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+        <h3>Outset</h3>
+        <div class="col-outset">
+          <li>Ataúlfo</li><li>Sigerico</li><li>Walia</li><li>Teodoredo</li>
+          <li>Turismundo</li><li>Teodorico</li><li>Eurico</li><li>Alarico II</li>
+          <li>Gesaleico</li><li>Amalarico</li><li>Teudis</li><li>Teudiselo</li>
+          <li>Agila I</li><li>Atanagildo</li><li>Liuva I</li><li>Leovigildo</li>
+        </div>
+
+      </article>
+      <h2>Compatibilidad con todos los navegadores</h2>
+      <article>
+        <p>
+          Como los navegadores aún no comparten una sintaxis única, es necesario
+          repetir las propiedades anteponiendo los prefijos de cada fabricante:
+        </p>
+        <ul>
+          <li><strong>-webkit-</strong> para Chrome y Safari.</li>
+          <li><strong>-moz-</strong> para Firefox.</li>
+          <li><strong>-o-</strong> para Opera.</li>
+          <li><strong>-ms-</strong> para versiones modernas de Internet Explorer.</li>
+        </ul>
+        <p>El código completo y compatible quedaría así:</p>
+        <div class="codigo-ejemplo">
+          <code>#columnas &#123;</code><br>
+          <code>&nbsp;&nbsp;column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;column-rule: 4px double black;</code><br>
+          <code>&nbsp;&nbsp;list-style: none;</code><br>
+          <br>
+          <code>&nbsp;&nbsp;-webkit-column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;-webkit-column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;-webkit-column-rule: 4px double black;</code><br>
+          <br>
+          <code>&nbsp;&nbsp;-moz-column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;-moz-column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;-moz-column-rule: 4px double black;</code><br>
+          <br>
+          <code>&nbsp;&nbsp;-o-column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;-o-column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;-o-column-rule: 4px double black;</code><br>
+          <br>
+          <code>&nbsp;&nbsp;-ms-column-count: 4;</code><br>
+          <code>&nbsp;&nbsp;-ms-column-gap: 20px;</code><br>
+          <code>&nbsp;&nbsp;-ms-column-rule: 4px double black;</code><br>
+          <code>&#125;</code>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

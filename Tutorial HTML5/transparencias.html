@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colores y degradados</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Colores, transparencias y degradados</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="colores.html"> Colores </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Colores predefinidos</h2>
+      <article>
+        <p>
+          En HTML5 existen colores predefinidos que tienen nombres mucho más
+          fáciles de recordar que sus respectivos códigos hexadecimales. Es
+          mucho más fácil acordarse de nombres de colores como
+          <strong>Tomato</strong>, <strong>Gold</strong>,
+          <strong>Olive</strong>, <strong>Chocolate</strong>,
+          <strong>Silver</strong>, <strong>Magenta</strong> o
+          <strong>Salmon</strong>
+          que de sus respectivos códigos de color en hexadecimal:
+          <strong>#FF6347</strong>, <strong>#FFD700</strong>,
+          <strong>#808000</strong>, <strong>#D2691E</strong>,
+          <strong>#C0C0C0</strong>, <strong>#FF00FF</strong> o
+          <strong>#FA8072</strong>.
+        </p>
+        <p>
+          Así, como ambas líneas tienen exactamente el mismo resultado... en tu
+          mano queda utilizar una u otra forma:
+        </p>
+        <div class="codigo-ejemplo">
+          <code>color: tomato;</code><br />
+          <code>color: #FF6347;</code>
+        </div>
+        <p>
+          A continuación una recopilación de los mejores colores de cada
+          tonalidad:
+        </p>
+
+        <h3>Rojos</h3>
+        <ul class="lista-colores">
+          <li style="background-color: IndianRed">IndianRed</li>
+          <li style="background-color: DarkSalmon">DarkSalmon</li>
+          <li style="background-color: Crimson">Crimson</li>
+          <li style="background-color: FireBrick">FireBrick</li>
+          <li style="background-color: DarkRed">DarkRed</li>
+          <li style="background-color: Maroon">Maroon</li>
+          <li style="background-color: Brown">Brown</li>
+        </ul>
+
+        <h3>Amarillos - Naranja</h3>
+        <ul class="lista-colores">
+          <li style="background-color: Coral">Coral</li>
+          <li style="background-color: OrangeRed">OrangeRed</li>
+          <li style="background-color: DarkOrange">DarkOrange</li>
+          <li style="background-color: Khaki; color: #555">Khaki</li>
+          <li style="background-color: Gold; color: #555">Gold</li>
+          <li style="background-color: Goldenrod">Goldenrod</li>
+          <li style="background-color: Moccasin; color: #555">Moccasin</li>
+        </ul>
+
+        <h3>Verdes</h3>
+        <ul class="lista-colores">
+          <li style="background-color: Lime; color: #555">Lime</li>
+          <li style="background-color: Olive">Olive</li>
+          <li style="background-color: OliveDrab">OliveDrab</li>
+          <li style="background-color: ForestGreen">ForestGreen</li>
+          <li style="background-color: DarkGreen">DarkGreen</li>
+          <li style="background-color: YellowGreen; color: #555">
+            YellowGreen
+          </li>
+          <li style="background-color: SeaGreen">SeaGreen</li>
+        </ul>
+
+        <h3>Rosa - Púrpura</h3>
+        <ul class="lista-colores">
+          <li style="background-color: LightPink; color: #555">LightPink</li>
+          <li style="background-color: HotPink">HotPink</li>
+          <li style="background-color: Violet; color: #555">Violet</li>
+          <li style="background-color: Fuchsia">Fuchsia</li>
+          <li style="background-color: #9966cc">Amethyst</li>
+          <li style="background-color: Purple">Purple</li>
+          <li style="background-color: Indigo">Indigo</li>
+        </ul>
+
+        <h3>Azules</h3>
+        <ul class="lista-colores">
+          <li style="background-color: Aqua; color: #555">Aqua</li>
+          <li style="background-color: LightCyan; color: #555">LightCyan</li>
+          <li style="background-color: SteelBlue">SteelBlue</li>
+          <li style="background-color: Navy">Navy</li>
+          <li style="background-color: RoyalBlue">RoyalBlue</li>
+          <li style="background-color: SkyBlue; color: #555">SkyBlue</li>
+          <li style="background-color: DarkSlateGray">DarkSlateGray</li>
+        </ul>
+
+        <h3>Marrones</h3>
+        <ul class="lista-colores">
+          <li style="background-color: Cornsilk; color: #555">Cornsilk</li>
+          <li style="background-color: NavajoWhite; color: #555">
+            NavajoWhite
+          </li>
+          <li style="background-color: BurlyWood; color: #555">BurlyWood</li>
+          <li style="background-color: RosyBrown">RosyBrown</li>
+          <li style="background-color: Peru">Peru</li>
+          <li style="background-color: Chocolate">Chocolate</li>
+          <li style="background-color: Sienna">Sienna</li>
+        </ul>
+
+        <p>
+          Si quieres conocer la lista de nombres de colores completa accede a
+          <a href="http://html-color-codes.info/color-names/" target="_blank"
+            >HTML Color Code</a
+          >
+          o a una muy útil
+          <a
+            href="http://html-color-codes.info/#HTML_Color_Picker"
+            target="_blank"
+            >paleta interactiva de colores</a
+          >.
+        </p>
+      </article>
+
+      <h2>Transparencias</h2>
+      <article>
+        <p>
+          En CSS3 se pueden definir transparencias, ya sea en el color de fondo
+          de un &lt;div&gt; en concreto como en algunos elementos individuales.
+          Para definir un color de fondo con un índice de transparencia
+          determinado utilizamos
+          <strong>rgba(rojo, verde, azul, transparencia)</strong>:
+        </p>
+        <div class="codigo-ejemplo">
+          <code>background-color: rgba(255, 0, 0, 0.4);</code>
+        </div>
+        <p>
+          El primer cuadro representa un color rojo con una opacidad del 40%
+          (<strong>0.4</strong>), mientras que el segundo se ha añadido para ver
+          la diferencia con el rojo sin transparencia.
+        </p>
+        <div class="fila-transparencias">
+          <div id="color-rgba"></div>
+          <div id="color-solido"></div>
+        </div>
+        <p>
+          En este ejemplo se usan los valores RGB del rojo (255 para el rojo, 0
+          para el verde y 0 para el azul), con un 0.4 (40%) de opacidad (o 60%
+          de transparencia).
+        </p>
+        <p>
+          Otra posibilidad es utilizar el atributo <strong>opacity</strong>,
+          indicando valores de 0 (totalmente transparente) a 1 (totalmente
+          opaco):
+        </p>
+        <div class="codigo-ejemplo">
+          <code>opacity: 0.4;</code>
+        </div>
+      </article>
+
+      <h2>Degradados</h2>
+      <article>
+        <p>
+          Los degradados a través de CSS3 han sido una de las que más vueltas
+          han dado hasta estabilizarse. El código genérico funciona en:
+        </p>
+        <ul>
+          <li>Firefox 3.6+</li>
+          <li>Chrome +10</li>
+          <li>Safari +5.1</li>
+          <li>Opera 11.10+ (solo degradados lineales)</li>
+          <li>Internet Explorer 10+</li>
+        </ul>
+      </article>
+
+      <h2>Degradados lineales</h2>
+      <article>
+        <p>
+          Primero definimos <strong>dónde empieza</strong> el degradado
+          (<strong>top</strong>, <strong>bottom</strong>,
+          <strong>right</strong>, <strong>left</strong>) o bien indicando un
+          ángulo (<strong>45deg</strong>), seguido de los
+          <strong>colores</strong> que lo compondrán y, opcionalmente, cuánto
+          durará cada color en porcentaje.
+        </p>
+        <div class="codigo-ejemplo">
+          <code
+            >background: linear-gradient(dónde empieza, color1, 40%, color2,
+            60%);</code
+          >
+        </div>
+
+        <h3>Ejemplo 1 — de arriba hacia abajo</h3>
+        <div class="codigo-ejemplo">
+          <code>background: linear-gradient(to bottom, red, gold);</code>
+        </div>
+        <p>
+          Degradado lineal que empieza en la parte superior del &lt;div&gt;
+          (<strong>top</strong>) y que va desde el color
+          <strong>red</strong> hasta el color <strong>gold</strong>.
+        </p>
+        <div id="deg-lineal-1"></div>
+
+        <hr />
+
+        <h3>Ejemplo 2 — diagonal con múltiples colores</h3>
+        <div class="codigo-ejemplo">
+          <code
+            >background: linear-gradient(30deg, crimson, sienna, royalblue,
+            indianred, purple);</code
+          >
+        </div>
+        <p>
+          Degradado lineal con una inclinación de <strong>30 grados</strong> que
+          pasa por los colores <strong>crimson</strong>,
+          <strong>sienna</strong>, <strong>royalblue</strong>,
+          <strong>indianred</strong> y <strong>purple</strong>.
+        </p>
+        <div id="deg-lineal-2"></div>
+
+        <hr />
+
+        <h3>Ejemplo 3 — con porcentajes por color</h3>
+        <div class="codigo-ejemplo">
+          <code
+            >background: linear-gradient(to bottom, black 10%, orangered 75%,
+            yellow);</code
+          >
+        </div>
+        <p>
+          Degradado lineal con 3 colores indicando sus dimensiones. El
+          <strong>negro</strong> ocupa el 10%, el <strong>orangered</strong>
+          ocupa el 65% (del 10 al 75%), y el 25% restante es para el
+          <strong>yellow</strong>.
+        </p>
+        <div id="deg-lineal-3"></div>
+      </article>
+
+      <h2>Degradados radiales</h2>
+      <article>
+        <p>
+          La sintaxis es muy parecida a los degradados lineales pero usando
+          <strong>radial-gradient</strong>. Primero se define
+          <strong>dónde está el centro</strong> del degradado, luego la
+          <strong>forma</strong> (<strong>circle</strong> o
+          <strong>ellipse</strong>), opcionalmente cómo se
+          <strong>expandirá</strong> el degradado, y por último los
+          <strong>colores</strong>.
+        </p>
+        <div class="codigo-ejemplo">
+          <code
+            >background: radial-gradient(dónde está el centro, circle/ellipse
+            expansión, color1, 40%, color2, 60%);</code
+          >
+        </div>
+
+        <h3>Valores de expansión del degradado</h3>
+        <ul>
+          <li>
+            <strong>closest-side</strong>: el degradado se expande hasta que su
+            forma exterior se encuentra con el <strong>lado más cercano</strong>
+            al centro.
+          </li>
+          <li>
+            <strong>farthest-side</strong>: el degradado se expande hasta que su
+            forma exterior se encuentra con el <strong>lado más lejano</strong>
+            al centro.
+          </li>
+          <li>
+            <strong>closest-corner</strong>: el degradado se expande hasta que
+            su forma exterior se encuentra con la
+            <strong>esquina más cercana</strong>
+            al centro.
+          </li>
+          <li>
+            <strong>farthest-corner</strong>: el degradado se extiende hasta que
+            su forma exterior se encuentra con la
+            <strong>esquina más lejana</strong>
+            al centro.
+          </li>
+        </ul>
+
+        <h3>Ejemplo 1 — círculo centrado</h3>
+        <div class="codigo-ejemplo">
+          <code
+            >background: radial-gradient(circle at center, black,
+            #1162ac);</code
+          >
+        </div>
+        <p>
+          Degradado radial que empieza en el centro del &lt;div&gt;, con forma
+          de <strong>círculo</strong>, que va del color
+          <strong>negro</strong> hasta el <strong>azul #1162ac</strong>.
+        </p>
+        <div id="deg-radial-1"></div>
+
+        <hr />
+
+        <h3>Ejemplo 2 — elipse desde arriba</h3>
+        <div class="codigo-ejemplo">
+          <code
+            >background: radial-gradient(ellipse at 200px top, white, #1162ac,
+            black);</code
+          >
+        </div>
+        <p>
+          Degradado radial que empieza horizontalmente a
+          <strong>200px</strong> y verticalmente en la parte
+          <strong>superior</strong>, con forma elíptica que va del
+          <strong>white</strong> hasta el <strong>black</strong> pasando por el
+          <strong>azul #1162ac</strong>.
+        </p>
+        <div id="deg-radial-2"></div>
+
+        <hr />
+
+        <h3>Ejemplo 3 — elipse con porcentajes</h3>
+        <div class="codigo-ejemplo">
+          <code
+            >background: radial-gradient(ellipse at center, white 25%, peru 66%,
+            black 96%);</code
+          >
+        </div>
+        <p>
+          Degradado radial elíptico centrado que define dimensiones por color:
+          <strong>white</strong> en un 25%, <strong>peru</strong> en un 41% (del
+          25 al 66%) y <strong>black</strong> en un 30% (del 66 al 96%).
+        </p>
+        <div id="deg-radial-3"></div>
+      </article>
+
+      <h2>Compatibilidad con navegadores</h2>
+      <article>
+        <p>
+          Para que los degradados funcionen en la mayoría de navegadores
+          modernos hay que añadir el código CSS con los diferentes prefijos, sin
+          olvidar el código genérico (sin prefijos):
+        </p>
+        <div class="codigo-ejemplo">
+          <code>background: linear-gradient(to bottom, red, gold);</code><br />
+          <code>background: -webkit-linear-gradient(top, red, gold);</code
+          ><br />
+          <code>background: -moz-linear-gradient(top, red, gold);</code><br />
+          <code>background: -o-linear-gradient(top, red, gold);</code><br />
+          <code>background: -ms-linear-gradient(top, red, gold);</code>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

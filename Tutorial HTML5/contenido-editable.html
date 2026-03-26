@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contenido editable</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Contenido editable</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="colores.html"> Colores </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Ejemplo práctico</h2>
+      <article>
+        <p>
+          Para que un contenido sea editable (es decir, para que el usuario pueda
+          modificar, eliminar o añadir texto) desde el propio navegador, dicho
+          texto tiene que estar ubicado dentro de un <code>&lt;div&gt;</code> o
+          de una etiqueta semántica (<code>article</code>, <code>section</code>...)
+          con la propiedad <strong>contenteditable="true"</strong>:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>&lt;section id="editable" contenteditable="true"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h2&gt;Escribe tu pedido:&lt;/h2&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;2 bolsas de patatas&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;1 dónut&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;4 Kg. de boniatos&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+          <code>&lt;/section&gt;</code>
+        </div>
+
+        <p>El resultado del código anterior es el siguiente. <strong>Haz clic dentro del cuadro</strong> y modifica, elimina o añade líneas de texto:</p>
+
+        <section id="editable" contenteditable="true">
+          <h3>Escribe tu pedido:</h3>
+          <ul>
+            <li>2 bolsas de papas</li>
+            <li>1 pera negra</li>
+            <li>4 Kg. de bicarbonato de sodio y azufre y cloruro de magnesio</li>
+          </ul>
+        </section>
+
+        <p>
+          Si añades más elementos de los que caben dentro de la lista aparecerá
+          un scroll vertical, gracias a este código CSS:
+        </p>
+        <div class="codigo-ejemplo">
+          <code>#editable &#123;</code><br>
+          <code>&nbsp;&nbsp;overflow: auto;</code><br>
+          <code>&#125;</code>
+        </div>
+      </article>
+      <h2>Pregunta del millón</h2>
+      <article>
+        <p>
+          La pregunta que surge habitualmente después de ver esta función es:
+          <em>"Muy bien, perfecto y genial a la vez, pero ahora
+          ¿cómo recupero la información que he escrito o modificado?"</em>
+        </p>
+        <p>
+          La respuesta es que es posible obtener el contenido del
+          <code>&lt;div&gt;</code> con las modificaciones realizadas por el
+          usuario utilizando <strong>JavaScript</strong> o <strong>jQuery</strong>.
+        </p>
+        <p>
+          A modo de ejemplo, modifica el cuadro superior y pulsa el botón
+          "Leer el contenido" para que el navegador coja su contenido y lo
+          muestre en una ventana de alerta:
+        </p>
+
+        <button onclick="alert(document.getElementById('editable').innerText)">
+          Leer el contenido
+        </button>
+
+        <p>El código de este botón es el siguiente, donde <code>editable</code> es el id de la <code>&lt;section&gt;</code> donde hemos escrito:</p>
+
+        <div class="codigo-ejemplo">
+          <code>&lt;button onclick="alert(document.getElementById('editable').innerText)"&gt;</code><br>
+          <code>&nbsp;&nbsp;Leer el contenido</code><br>
+          <code>&lt;/button&gt;</code>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

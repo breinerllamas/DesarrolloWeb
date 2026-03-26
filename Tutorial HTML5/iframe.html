@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+
+  </head>
+  <body>
+    <header><h1>Iframe</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Iframe</h2>
+      <article>
+        <p>
+          < iframe > es una etiqueta de HTML bastante antigua que permite añadir
+          de una manera muy fácil y rápida una página web o contenido dentro de
+          otra página. Para ello únicamente hay que indicar la dirección web del
+          contenido o página html que quieres insertar y el espacio de la
+          ventana que mostrará dicho contenido.
+        </p>
+        <p>
+          A pesar de que con HTML5 < iframe > tiene sustituto el hecho de que
+          servicios como
+          <a href="https://share.google/KwLsNSiZFGweRAtMS"> GoogleMaps </a>
+          o <a href="https://www.youtube.com/" target="_blank">Youtube</a> la
+          utilicen para mostrar sus mapas o vídeos en nuestras páginas ha hecho
+          que se sigan utilizando de una manera muy habitual. De hecho, para
+          añadir un mapa o un vídeo de youtube el código nos lo proporciona la
+          propia página. Nosotros sólo tenemos que pegarlo sin más dentro de un
+          < div > que deberá tener un nombre de id o de class para poderlo
+          personalizar con CSS.
+        </p>
+        <p>
+          La sintaxis es la siguiente: < iframe width="640" height="510"
+          src="http://www..." frameborder="0"> < / iframe >
+        </p>
+        <p>
+          Los atributos que utilizamos son width y height para definir el tamaño
+          que tendrá la ventana que mostrará el contenido, frameborder para que
+          esta ventana o marco no tenga borde, y sobre todo src para indicar qué
+          página o contenido se debe mostrar dentro de esta ventana.
+        </p>
+      </article>
+      <h2>Añadir un mapa de Google Maps</h2>
+      <article>
+        <h3>¿Cómo insertar un mapa con &lt;iframe&gt;?</h3>
+        <p>
+          Google Maps permite incrustar cualquier mapa directamente en una
+          página web usando la etiqueta <strong>&lt;iframe&gt;</strong>. Los
+          pasos son los siguientes:
+        </p>
+
+        <ol class="pasos-mapa">
+          <li>
+            <strong>Accede a Google Maps</strong>
+            (<a href="https://www.maps.google.es" target="_blank"
+              >www.maps.google.es</a
+            >) y busca la dirección o el nombre del lugar que quieras mostrar.
+          </li>
+
+          <li>
+            Aplica el <strong>zoom</strong> que desees para encuadrar bien el
+            mapa.
+          </li>
+
+          <li>
+            Pulsa el botón <strong>"Configuración"</strong> (icono de engranaje,
+            ubicado en la parte inferior derecha de la pantalla) y selecciona la
+            opción <em>"Compartir e insertar mapa"</em>.
+          </li>
+
+          <li>
+            En la ventana que aparece, selecciona la pestaña superior derecha:
+            <strong>"Insertar mapa"</strong>.
+          </li>
+
+          <li>
+            Para indicar el <strong>tamaño del mapa</strong>, haz clic en el
+            desplegable que inicialmente muestra el valor
+            <em>"Mediano"</em> (ubicado en la parte superior izquierda de la
+            pantalla) y selecciona la opción
+            <strong>"Tamaño personalizado"</strong>.
+          </li>
+
+          <li>
+            Escribe la <strong>anchura</strong> y la <strong>altura</strong> en
+            píxeles que quieras que tenga el mapa.
+          </li>
+
+          <li>
+            <strong>Copia todo el código</strong> generado (el que empieza por
+            <code>&lt;iframe …&gt;</code>).
+          </li>
+
+          <li>
+            Pégalo dentro de un <strong>&lt;div&gt;</strong> con un
+            <code>id</code> o <code>class</code> para poder darle estilos
+            posteriormente con CSS.
+          </li>
+        </ol>
+
+        <div class="codigo-ejemplo">
+          <code>&lt;div id="mapa"&gt;</code><br />
+          <code
+            >&nbsp;&nbsp;&lt;iframe
+            src="https://www.google.com/maps/embed?pb=..."</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;width="510" height="425"</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;style="border:0;"</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;allowfullscreen=""</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;loading="lazy"</code><br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;referrerpolicy="no-referrer-when-downgrade"&gt;</code
+          ><br />
+          <code>&nbsp;&nbsp;&lt;/iframe&gt;</code><br />
+          <code>&lt;/div&gt;</code>
+        </div>
+
+        <h3>Ejemplo práctico para la UniCauca, Popayán</h3>
+        <p>
+          A continuación se muestra un mapa insertado con
+          <strong>&lt;iframe&gt;</strong> apuntando a la
+          <em>Universidad del Cauca</em> en Popayán. El
+          <code>&lt;div id="mapa"&gt;</code> permite controlar el tamaño y los
+          bordes desde el CSS.
+        </p>
+
+        <div id="mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.7410!2d-76.58656!3d2.44166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e25991000a3d5b1%3A0x5c66b1c6b1e7e1f0!2sUniversidad%20del%20Cauca!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

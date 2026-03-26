@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Audio</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html  "> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        <p>
+          Para utilizar audio en HTML5 sin usar plugins externos ocurre algo
+          parecido que con el vídeo. Existen diferentes formatos de audio y
+          desgraciadamente no existe ninguno que funcione perfectamente en todos
+          los navegadores, por lo que al menos tendremos que utilizar dos
+          formatos para poder abarcarlos a todos. Estos 2 formatos de audio
+          mayoritarios son:
+        </p>
+        <ul>
+          <li>
+            El formato MP3 (ficheros con extensión .mp3) abarca a la mayoría de
+            navegadores, excepto a FireFox. Aunque está ampliamente arraigado,
+            está sujeto a patentes.
+          </li>
+          <li>
+            El formato OGG Vorbis (ficheros con extensión .ogg) no está sujeto a
+            patentes (igual que ocurre en el caso del vídeo). No es aceptado por
+            Internet Explorer ni por Safari.
+          </li>
+        </ul>
+      </article>
+      <h2>Compatibilidad con navegadores</h2>
+      <article>
+        <p>
+          La tabla de formatos de audios aceptados por los diferentes
+          navegadores queda así:
+        </p>
+        <table>
+          <tr>
+            <th></th>
+            <th>MP3</th>
+            <th>OGG</th>
+            <th>WAV</th>
+          </tr>
+          <tr>
+            <th>Firefox</th>
+            <td>NO</td>
+            <td>si</td>
+            <td>si</td>
+          </tr>
+          <tr>
+            <th>Chrome</th>
+            <td>si</td>
+            <td>si</td>
+            <td>si</td>
+          </tr>
+          <tr>
+            <th>Opera</th>
+            <td>si</td>
+            <td>si</td>
+            <td>si</td>
+          </tr>
+          <tr>
+            <th>Safari</th>
+            <td>si</td>
+            <td>NO</td>
+            <td>si</td>
+          </tr>
+          <tr>
+            <th>IExplorer</th>
+            <td>si</td>
+            <td>NO</td>
+            <td>NO</td>
+          </tr>
+        </table>
+        <p>El codigo para reproducir audio en HTML5 es el siguiente:</p>
+        <pre>
+    <code>&lt;audio src="audio.mp3"&gt;        
+    &lt;/audio&gt;
+    </code>
+          </pre>
+        <p>
+          En el tag 'audio' es posible incorporar algunos atributos de control
+          del audio, como son:
+        </p>
+        <ul>
+          <li>
+            controls: Establece si tendrá la barra de navegación (play, stop,
+            volumen...) o no
+          </li>
+          <li>
+            autoplay: Indica si el audio se inicia automáticamente al cargar la
+            página html
+          </li>
+          <li>
+            loop: Establece si al acabar el audio, éste debe volver a empezar
+            indefinidamente
+          </li>
+          <li>
+            preload: Indica si el audio se empieza a cargar cuando el navegador
+            carga la página html
+          </li>
+        </ul>
+      </article>
+      <h2>Ejemplo práctico</h2>
+      <audio id="audioo" src="Imagenes/audio.mpeg" controls></audio>
+    </section>
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

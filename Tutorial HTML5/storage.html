@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+
+    <script type="text/javascript">
+      /* ── contador de visitas ── */
+      if (localStorage.veces == undefined) {
+        localStorage.veces = 1;
+      } else {
+        localStorage.veces = Number(localStorage.veces) + 1;
+      }
+
+      /* ── daludo con nombre guardado ── */
+      function saludar() {
+        var nombre = localStorage.nombreUsuario;
+        var caja = document.getElementById("saludo");
+        if (nombre == undefined || nombre == "") {
+          caja.innerHTML =
+            "No hay ningún nombre guardado todavía. ¡Escribe el tuyo!";
+        } else {
+          caja.innerHTML =
+            "¡Hola, <strong>" + nombre + "</strong>! Bienvenido/a de nuevo.";
+        }
+      }
+
+      function guardarNombre() {
+        var input = document.getElementById("inputNombre").value;
+        if (input.trim() !== "") {
+          localStorage.nombreUsuario = input;
+          saludar();
+        } else {
+          alert("Por favor escribe un nombre antes de guardar.");
+        }
+      }
+
+      function borrarTodo() {
+        localStorage.clear();
+        sessionStorage.clear();
+        alert(
+          "Todos los datos han sido borrados. Recarga la página para empezar de nuevo.",
+        );
+      }
+
+      /* ── ejecutar al cargar la página ── */
+      window.onload = function () {
+        saludar();
+        document.getElementById("contador").innerHTML =
+          "Has visitado esta página <strong>" +
+          localStorage.veces +
+          "</strong> vece(s) con este navegador.";
+      };
+    </script>
+  </head>
+  <body>
+    <header><h1>Storage (para guardar datos localmente)</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="colores.html"> Colores </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Ejemplo práctico de lo qué es Storage</h2>
+      <article>
+        <p>
+          Para hacernos una idea de qué es y las posibilidades de Storage vamos
+          a empezar con un ejemplo práctico. Si es la primera vez que accedes a
+          esta página, el navegador no sabe tu nombre. Si escribes tu nombre y
+          pulsas "Guardar", las siguientes veces que entres te saludará por él
+          automáticamente.
+        </p>
+        <p>
+          <strong>¡Pruébalo!</strong> Escribe tu nombre, pulsa "Guardar" y
+          recarga la página.
+        </p>
+
+        <div id="caja-storage">
+          <p id="saludo">Cargando...</p>
+          <div class="storage-fila">
+            <input
+              type="text"
+              id="inputNombre"
+              placeholder="Escribe tu nombre..."
+            />
+            <button onclick="guardarNombre()">Guardar</button>
+          </div>
+          <p>
+            Si deseas borrar todos los datos (para probar como si fuera la
+            primera vez), pulsa este botón y recarga la página:
+          </p>
+          <button class="btn-borrar" onclick="borrarTodo()">
+            Borrar todos los datos
+          </button>
+        </div>
+      </article>
+
+      <h2>Tipos de datos guardados</h2>
+      <article>
+        <p>
+          Con HTML5 ya es posible guardar datos locales en el ordenador del
+          usuario
+          <strong>sin limitación de tiempo</strong>, sin que se borren en cada
+          sesión, con una limitación de hasta <strong>5 MB</strong>, sin
+          necesitar ningún servidor, base de datos ni cookies.
+        </p>
+        <p>Existen dos tipos de almacenamiento:</p>
+        <ul>
+          <li>
+            <strong>sessionStorage</strong>: los datos permanecen mientras el
+            usuario tiene el navegador abierto. Al cerrar el navegador se borran
+            automáticamente.
+          </li>
+          <li>
+            <strong>localStorage</strong>: los datos permanecen siempre, incluso
+            si se cierra el navegador y se apaga el ordenador.
+          </li>
+        </ul>
+        <p>
+          Es importante señalar que la información guardada es accesible
+          <strong>solo desde el mismo navegador</strong> que la guardó. El
+          localStorage de Chrome es diferente al de Firefox o al de Opera.
+        </p>
+      </article>
+
+      <h2>Las palabras mágicas</h2>
+      <article>
+        <p>
+          El localStorage funciona bajo <strong>JavaScript</strong>, por lo que
+          el código debe colocarse dentro del <code>&lt;head&gt;</code>, entre
+          estas dos etiquetas:
+        </p>
+        <div class="codigo-ejemplo">
+          <code>&lt;script type="text/javascript"&gt;</code><br />
+          <code>&lt;/script&gt;</code>
+        </div>
+
+        <h3>Guardar un dato</h3>
+        <p>Para guardar un valor necesitamos 3 datos:</p>
+        <ul>
+          <li>
+            <strong>a)</strong> <code>localStorage</code> (permanente) o
+            <code>sessionStorage</code> (solo mientras el navegador está
+            abierto).
+          </li>
+          <li>
+            <strong>b)</strong> Un nombre para identificar esa información.
+          </li>
+          <li><strong>c)</strong> La información a guardar.</li>
+        </ul>
+        <div class="codigo-ejemplo">
+          <code>localStorage.nombre = 'Javier';</code>
+        </div>
+        <p>
+          Este código guarda permanentemente el dato "Javier" dentro del dato
+          llamado <code>nombre</code>.
+        </p>
+
+        <h3>Recuperar la información</h3>
+        <p>Para leer o recuperar la información necesitamos también 3 datos:</p>
+        <ul>
+          <li>
+            <strong>a)</strong> <code>localStorage</code> o
+            <code>sessionStorage</code> según corresponda.
+          </li>
+          <li>
+            <strong>b)</strong> El nombre que le dimos al dato cuando se guardó.
+          </li>
+          <li>
+            <strong>c)</strong> Una variable donde guardar dicha información (o
+            un <code>alert</code> que la muestre).
+          </li>
+        </ul>
+        <div class="codigo-ejemplo">
+          <code
+            >alert('La información recuperada ha sido ' +
+            localStorage.nombre);</code
+          >
+        </div>
+        <p>
+          El <code>alert</code> hace aparecer una ventana flotante con el texto
+          indicado más el valor guardado en <code>localStorage.nombre</code>.
+        </p>
+
+        <h3>Eliminar un dato concreto</h3>
+        <div class="codigo-ejemplo">
+          <code>localStorage.removeItem('nombre');</code>
+        </div>
+        <p>
+          Elimina únicamente el dato llamado <code>nombre</code> del
+          localStorage permanente.
+        </p>
+
+        <h3>Eliminar todos los datos</h3>
+        <div class="codigo-ejemplo">
+          <code>localStorage.clear();</code><br />
+          <code>sessionStorage.clear();</code>
+        </div>
+        <p>
+          Elimina todos los datos guardados, tanto permanentes como los de la
+          sesión actual.
+        </p>
+
+        <h3>Saber cuántos datos hay guardados</h3>
+        <div class="codigo-ejemplo">
+          <code
+            >alert('Hay ' + localStorage.length + ' elementos guardados');</code
+          >
+        </div>
+        <p>
+          Con el atributo <strong>.length</strong> podemos conocer cuántos
+          elementos hay guardados en el localStorage.
+        </p>
+      </article>
+
+      <h2>Ejemplo práctico paso a paso</h2>
+      <article>
+        <p>
+          A continuación se muestra un contador que va contando las veces que
+          has entrado en esta página con este navegador. Recarga la página
+          varias veces para comprobar cómo se incrementa, incluso si cierras el
+          navegador y vuelves mañana.
+        </p>
+
+        <div id="caja-visitas">
+          <p id="contador">Cargando...</p>
+        </div>
+
+        <p>
+          El código JavaScript que lo hace posible, colocado dentro del
+          <code>&lt;head&gt;</code>, es el siguiente:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>&lt;script type="text/javascript"&gt;</code><br />
+          <br />
+          <code>&nbsp;&nbsp;if (localStorage.veces == undefined) &#123;</code
+          ><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;localStorage.veces = 1;</code><br />
+          <code>&nbsp;&nbsp;&#125; else &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;&nbsp;&nbsp;localStorage.veces =
+            Number(localStorage.veces) + 1;</code
+          ><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <br />
+          <code
+            >&nbsp;&nbsp;document.write("Visitas: " + localStorage.veces + "
+            veces.");</code
+          ><br />
+          <br />
+          <code>&lt;/script&gt;</code>
+        </div>
+
+        <h3>Explicación línea a línea</h3>
+        <ul>
+          <li>
+            Usamos <strong>localStorage</strong> para que los datos sean
+            permanentes (no se borren al cerrar el navegador).
+          </li>
+          <li>
+            Llamamos al dato <strong>veces</strong>, por lo que accedemos a él
+            como <code>localStorage.veces</code>.
+          </li>
+          <li>
+            <code>if (localStorage.veces == undefined)</code>: si el dato no
+            existe todavía (primera visita), lo inicializamos a 1.
+          </li>
+          <li>
+            <code>localStorage.veces = 1;</code>: guarda el valor 1 en la
+            primera visita.
+          </li>
+          <li>
+            <code>} else {</code>: si el dato ya existe (ya hemos visitado la
+            página antes)...
+          </li>
+          <li>
+            <code>localStorage.veces = Number(localStorage.veces) + 1;</code>:
+            le suma 1 al valor actual. El <code>Number()</code> es necesario
+            para que haga una <strong>suma</strong> (1+1=2) y no una
+            <strong>concatenación</strong> de texto (1+1="11").
+          </li>
+          <li>
+            <code>document.write(...)</code>: escribe el resultado directamente
+            en la página web.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

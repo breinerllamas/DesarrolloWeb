@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transiciones</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Transiciones</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Transition</h2>
+      <article>
+        <p>
+          Las transiciones (<strong>transition</strong>) funcionan como pequeñas
+          animaciones que siguen las mismas características que
+          <strong>transform</strong> (cambio de posición, tamaño, rotación...)
+          pero con la capacidad de especificar una <strong>duración</strong>
+          para que el cambio se produzca de forma progresiva.
+        </p>
+        <p>
+          Para comprobar su funcionamiento usaremos el
+          <code>&lt;div id="astronauta-t"&gt;</code> que contiene la imagen del
+          astronauta. <strong>Pasa el cursor por encima de cada ejemplo</strong>
+          para activar la transición correspondiente.
+        </p>
+        <p>
+          Para que <strong>transition</strong> funcione en todos los navegadores
+          hay que repetir la propiedad anteponiendo los prefijos:
+          <strong>-webkit-</strong> (Chrome y Safari),
+          <strong>-moz-</strong> (Firefox), <strong>-o-</strong> (Opera),
+          <strong>-ms-</strong> (Internet Explorer).
+        </p>
+      </article>
+      <h2>Transición con una única propiedad</h2>
+      <article>
+        <p>
+          Al pasar el cursor por encima del astronauta se producirá una
+          transición de <strong>1.5 segundos</strong> que desplazará el
+          <code>&lt;div&gt;</code>
+          <strong>400 píxeles hacia la derecha</strong>.
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-t &#123;</code><br />
+          <code>&nbsp;&nbsp;transition: left 1.5s;</code><br />
+          <code>&#125;</code><br />
+          <br />
+          <code>#astronauta-t:hover &#123;</code><br />
+          <code>&nbsp;&nbsp;position: relative;</code><br />
+          <code>&nbsp;&nbsp;left: 400px;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          En el primer bloque se define que la transición actuará sobre la
+          propiedad <strong>left</strong> durante 1.5 segundos. El cambio de
+          valor de <code>left</code> se coloca en <strong>:hover</strong> para
+          que ocurra al pasar el cursor encima. Al usar <code>left</code> es
+          obligatorio que <code>position</code> sea <code>relative</code> o
+          <code>absolute</code>.
+        </p>
+
+        <div id="astronauta-t"></div>
+      </article>
+
+      <h2>Transición con múltiples propiedades</h2>
+      <article>
+        <p>
+          Para animar varias propiedades a la vez con duraciones distintas se
+          separan con <strong>","</strong>. En este ejemplo, al pasar el cursor
+          ocurren 6 cambios simultáneos:
+        </p>
+        <ul>
+          <li>
+            Se desplaza <strong>400px a la derecha</strong> (left) en 1.5s.
+          </li>
+          <li>
+            El <strong>fondo</strong> cambia a negro (background-color) en 2s.
+          </li>
+          <li>La <strong>anchura</strong> crece a 225px (width) en 1s.</li>
+          <li>La <strong>altura</strong> crece a 200px (height) en 1s.</li>
+          <li>El <strong>padding-left</strong> se expande a 100px en 1s.</li>
+          <li>El <strong>padding-top</strong> se expande a 20px en 1s.</li>
+        </ul>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-multi &#123;</code><br />
+          <code>&nbsp;&nbsp;background-color: #6a8f89;</code><br />
+          <code>&nbsp;&nbsp;width: 100px;</code><br />
+          <code>&nbsp;&nbsp;height: 100px;</code><br />
+          <code
+            >&nbsp;&nbsp;transition: left 1.5s, background-color 2s, width 1s,
+            height 1s, padding-left 1s, padding-top 1s;</code
+          ><br />
+          <code>&#125;</code><br />
+          <br />
+          <code>#astronauta-multi:hover &#123;</code><br />
+          <code>&nbsp;&nbsp;position: relative;</code><br />
+          <code>&nbsp;&nbsp;left: 400px;</code><br />
+          <code>&nbsp;&nbsp;background-color: black;</code><br />
+          <code>&nbsp;&nbsp;width: 225px;</code><br />
+          <code>&nbsp;&nbsp;height: 200px;</code><br />
+          <code>&nbsp;&nbsp;padding-left: 100px;</code><br />
+          <code>&nbsp;&nbsp;padding-top: 20px;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          Los valores iniciales de <code>background-color</code>,
+          <code>width</code> y <code>height</code> se definen en el primer
+          bloque. Las propiedades que no se definan (como
+          <code>padding-left</code> y <code>padding-top</code>) toman sus
+          valores por defecto.
+        </p>
+
+        <div id="astronauta-multi"></div>
+      </article>
+
+      <h2>Las palabras mágicas</h2>
+      <article>
+        <p>
+          Aunque <strong>no es obligatorio</strong>, se puede especificar el
+          tipo de movimiento y un retardo antes de que empiece la animación. La
+          sintaxis completa es:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code
+            >transition: [propiedad] [duración] [tipo de animación]
+            [retardo];</code
+          ><br />
+          <code>transition: width 2s ease-out 0.5s;</code>
+        </div>
+
+        <h3>Propiedades que se pueden animar</h3>
+        <p>
+          Entre las más habituales: <code>all</code>,
+          <code>background-color</code>, <code>border</code>,
+          <code>border-radius</code>, <code>color</code>, <code>top</code>,
+          <code>bottom</code>, <code>left</code>, <code>right</code>,
+          <code>box-shadow</code>, <code>width</code>, <code>height</code>,
+          <code>margin</code>, <code>opacity</code>, <code>padding</code>,
+          <code>text-shadow</code>, <code>visibility</code>,
+          <code>z-index</code>, entre otras.
+        </p>
+
+        <h3>Tipos de animación (easing)</h3>
+        <ul>
+          <li>
+            <strong>linear</strong>: velocidad uniforme en todo el recorrido.
+          </li>
+          <li>
+            <strong>ease</strong>: se acelera al inicio, se retarda un poco y
+            vuelve a acelerar al final.
+          </li>
+          <li>
+            <strong>ease-in</strong>: empieza lento y va aumentando la velocidad
+            progresivamente.
+          </li>
+          <li>
+            <strong>ease-out</strong>: empieza rápido y va desacelerando hasta
+            el final.
+          </li>
+          <li>
+            <strong>ease-in-out</strong>: empieza y termina lento; la parte
+            central es la más rápida.
+          </li>
+        </ul>
+
+        <h3>Retardo</h3>
+        <p>
+          Tiempo en segundos que el navegador esperará antes de iniciar la
+          animación (por ejemplo <code>0.5s</code>).
+        </p>
+
+        <p>
+          En el ejemplo siguiente, al pasar el cursor, el astronauta esperará
+          <strong>0.5s</strong> y luego se volverá transparente durante
+          <strong>2 segundos</strong> con efecto <strong>ease-out</strong>
+          (empieza rápido y se va frenando):
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-opacity &#123;</code><br />
+          <code>&nbsp;&nbsp;opacity: 1;</code><br />
+          <code>&nbsp;&nbsp;transition: opacity 2s ease-out 0.5s;</code><br />
+          <code>&#125;</code><br />
+          <br />
+          <code>#astronauta-opacity:hover &#123;</code><br />
+          <code>&nbsp;&nbsp;opacity: 0;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <div id="astronauta-opacity"></div>
+      </article>
+
+      <h2>Compatibilidad con todos los navegadores</h2>
+      <article>
+        <p>
+          Para garantizar la compatibilidad con navegadores antiguos hay que
+          repetir las propiedades con cada prefijo. El código del ejemplo
+          anterior quedaría así:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-opacity &#123;</code><br />
+          <code>&nbsp;&nbsp;opacity: 1;</code><br />
+          <code>&nbsp;&nbsp;-webkit-opacity: 1;</code><br />
+          <code>&nbsp;&nbsp;-moz-opacity: 1;</code><br />
+          <code>&nbsp;&nbsp;-o-opacity: 1;</code><br />
+          <code>&nbsp;&nbsp;-ms-opacity: 1;</code><br />
+          <br />
+          <code>&nbsp;&nbsp;transition: opacity 2s ease-out 0.5s;</code><br />
+          <code>&nbsp;&nbsp;-webkit-transition: opacity 2s ease-out 0.5s;</code
+          ><br />
+          <code>&nbsp;&nbsp;-moz-transition: opacity 2s ease-out 0.5s;</code
+          ><br />
+          <code>&nbsp;&nbsp;-o-transition: opacity 2s ease-out 0.5s;</code
+          ><br />
+          <code>&nbsp;&nbsp;-ms-transition: opacity 2s ease-out 0.5s;</code
+          ><br />
+          <code>&#125;</code><br />
+          <br />
+          <code>#astronauta-opacity:hover &#123;</code><br />
+          <code>&nbsp;&nbsp;opacity: 0;</code><br />
+          <code>&nbsp;&nbsp;-webkit-opacity: 0;</code><br />
+          <code>&nbsp;&nbsp;-moz-opacity: 0;</code><br />
+          <code>&nbsp;&nbsp;-o-opacity: 0;</code><br />
+          <code>&nbsp;&nbsp;-ms-opacity: 0;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          La mayoría de navegadores modernos ya no necesitan prefijos para las
+          transiciones, pero añadirlos garantiza compatibilidad con versiones
+          antiguas.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>

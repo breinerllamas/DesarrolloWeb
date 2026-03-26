@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animaciones</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header><h1>Animaciones (animation)</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html"> Inicio </a></li>
+        <li><a href="bordes.html"> Bordes </a></li>
+        <li><a href="sombras.html"> Sombras </a></li>
+        <li><a href="imagenes.html"> Imagenes </a></li>
+        <li><a href="posicion.html"> Posicion </a></li>
+        <li><a href="transformaciones.html"> Transformaciones </a></li>
+        <li><a href="formularios.html"> Formularios </a></li>
+        <li><a href="iframe.html"> Iframe </a></li>
+        <li><a href="transiciones.html"> Transiciones </a></li>
+        <li><a href="columnas.html"> Columnas </a></li>
+        <li><a href="video.html"> Video </a></li>
+        <li><a href="audio.html"> Audio </a></li>
+        <li><a href="transparencias.html"> Transparencias </a></li>
+        <li><a href="animacion.html"> Animación </a></li>
+        <li><a href="svg.html"> SVG </a></li>
+        <li><a href="responsive.html"> Responsive </a></li>
+        <li><a href="contenido-editable.html"> Contenido editable </a></li>
+        <li><a href="storage.html"> Storage </a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Animation</h2>
+      <article>
+        <p>
+          De una manera parecida a las <strong>transiciones</strong>, pero con
+          una mayor potencialidad, en HTML5 tenemos a nuestra disposición las
+          <strong>animaciones</strong> (<strong>animation</strong>).
+        </p>
+        <p>
+          Para empezar con algo sencillo, primero vamos a hacer paso a paso que
+          el astronauta gire al colocar el cursor encima.
+        </p>
+        <p>
+          <strong>Sitúa el cursor encima del astronauta</strong> para ver la
+          animación.
+        </p>
+
+        <div id="astronauta-anim-simple"></div>
+      </article>
+
+      <h2>Paso a paso</h2>
+      <article>
+        <h3>1. Creamos el objeto a animar</h3>
+        <p>
+          Primero, creamos dentro de un <code>&lt;div&gt;</code> el objeto,
+          imagen o texto que realizará la animación. En este caso usaremos el
+          <code>&lt;div id="astronauta-anim-simple"&gt;</code>, que tiene la
+          imagen del astronauta definida como fondo en el CSS.
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>&lt;div id="astronauta-anim-simple"&gt;&lt;/div&gt;</code>
+        </div>
+
+        <hr />
+
+        <h3>2. Establecemos la animación</h3>
+        <p>
+          Seguidamente, en el código CSS, indicamos en el selector del
+          <code>&lt;div&gt;</code> qué animación tendrá que reproducir, con un
+          <strong>nombre</strong> y la <strong>duración</strong> en segundos.
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-anim-simple:hover &#123;</code><br />
+          <code>&nbsp;&nbsp;animation: animacion_astronauta 2s;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          El nombre de la animación (<code>animacion_astronauta</code>) y la
+          duración (<code>2s</code>) son valores <strong>obligatorios</strong>,
+          pero existen valores opcionales que nos permiten personalizarla:
+        </p>
+
+        <ul>
+          <li>
+            <strong>animation-timing-function</strong>: Define el tipo de
+            aceleración (easing).
+            <ul>
+              <li>
+                <strong>linear</strong>: la velocidad es siempre la misma
+                durante toda la animación.
+              </li>
+              <li>
+                <strong>ease</strong>: la animación comienza lenta, después
+                rápida y acaba lento.
+              </li>
+              <li>
+                <strong>ease-in</strong>: la animación empieza lenta y va
+                acelerándose progresivamente.
+              </li>
+              <li>
+                <strong>ease-out</strong>: la animación empieza rápida y va
+                decelerando progresivamente.
+              </li>
+              <li>
+                <strong>ease-in-out</strong>: la animación empieza y acaba
+                lenta; la parte central va rápida.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>animation-iteration-count</strong>: Número de veces que se
+            repetirá la animación.
+            <ul>
+              <li>
+                <strong>infinite</strong>: la animación se repite
+                indefinidamente.
+              </li>
+              <li>
+                <strong>número de repeticiones</strong>: se repite el número de
+                veces indicado (por defecto es 1).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>animation-direction</strong>: Establece la dirección de la
+            animación.
+            <ul>
+              <li>
+                <strong>normal</strong>: la animación se reproduce siempre tal y
+                como la hemos definido.
+              </li>
+              <li>
+                <strong>alternate</strong>: primero se reproduce en la dirección
+                definida y luego al revés (y así sucesivamente).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>animation-delay</strong>: Tiempo de espera antes de que se
+            inicie la animación.
+            <ul>
+              <li>
+                El número de segundos seguido de <code>s</code> (por ejemplo,
+                <code>1s</code>).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>animation-fill-mode</strong>: Indica cómo quedará el
+            elemento cuando la animación finalice.
+            <ul>
+              <li>
+                <strong>none</strong>: al acabar se aplicarán los estilos CSS
+                normales del elemento.
+              </li>
+              <li>
+                <strong>forwards</strong>: el elemento se quedará tal y como
+                acabó la animación (100%).
+              </li>
+              <li>
+                <strong>backwards</strong>: el elemento se quedará con las
+                propiedades del inicio (0%).
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          El ejemplo anterior podría complementarse con estas propiedades
+          opcionales:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-anim-simple:hover &#123;</code><br />
+          <code>&nbsp;&nbsp;animation: animacion_astronauta 2s;</code><br />
+          <code>&nbsp;&nbsp;animation-timing-function: ease-out;</code><br />
+          <code>&nbsp;&nbsp;animation-iteration-count: infinite;</code><br />
+          <code>&nbsp;&nbsp;animation-direction: alternate;</code><br />
+          <code>&nbsp;&nbsp;animation-delay: 1s;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <hr />
+
+        <h3>3. Definimos cómo será la animación</h3>
+        <p>
+          Dentro del mismo código CSS, definimos en qué consistirá la animación
+          usando
+          <code>@keyframes</code> con el nombre que asignamos antes.
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>@keyframes animacion_astronauta &#123;</code><br />
+          <code>&nbsp;&nbsp;0% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;50% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(90deg);</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;100% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          Toda la animación se puede dividir en tantos pasos como sea necesario,
+          aunque lo mínimo son 2: inicio (<code>0%</code>) y final
+          (<code>100%</code>).
+        </p>
+        <p>
+          En este ejemplo hay 3 pasos. Al inicio (<code>0%</code>) el astronauta
+          tiene una rotación de 0 grados; en el <code>50%</code> habrá rotado 90
+          grados hacia la derecha; y al <code>100%</code> volverá a su posición
+          original.
+        </p>
+      </article>
+      <h2>Ejemplo práctico complejo</h2>
+      <article>
+        <p>
+          El siguiente ejemplo es más complejo: el astronauta no solo rota, sino
+          que también
+          <strong>se desplaza hacia abajo</strong> durante la animación, y al
+          llegar al punto máximo de rotación permanece un momento antes de
+          volver a su posición inicial.
+        </p>
+        <p>
+          Se usa el parámetro <strong>infinite</strong> para que la animación
+          sea cíclica.
+        </p>
+
+        <div id="astronauta-anim-complejo"></div>
+
+        <p>
+          Para que el astronauta también baje al girar, añadimos la propiedad
+          <strong>top</strong> en cada paso de la animación:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>@keyframes animacion_astronauta_complejo &#123;</code><br />
+          <code>&nbsp;&nbsp;0% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;50% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(90deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 57px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;100% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          Siempre que usemos <code>top</code>, <code>left</code> o
+          <code>right</code>, debemos indicar si la posición es
+          <strong>relativa</strong> o <strong>absoluta</strong>, añadiendo
+          <code>position: relative</code> en el selector del div.
+        </p>
+        <p>
+          Para que el astronauta permanezca un momento en la posición girada,
+          añadimos un paso extra y ajustamos los porcentajes centrales:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>@keyframes animacion_astronauta_complejo &#123;</code><br />
+          <code>&nbsp;&nbsp;0% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;42% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(90deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 57px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;60% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(90deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 57px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&nbsp;&nbsp;100% &#123;</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);</code><br />
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;</code><br />
+          <code>&nbsp;&nbsp;&#125;</code><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>Al tratarse de una animación de 2 segundos:</p>
+        <ul>
+          <li>
+            El astronauta <strong>baja y gira</strong> en 0.84 segundos (del 0%
+            al 42%).
+          </li>
+          <li>
+            <strong>Permanece rotado</strong> durante 0.36 segundos (del 42% al
+            60%).
+          </li>
+          <li>
+            <strong>Vuelve</strong> a su posición inicial en 0.80 segundos (del
+            60% al 100%).
+          </li>
+        </ul>
+      </article>
+      <h2>Compatibilidad con todos los navegadores</h2>
+      <article>
+        <p>
+          Como ocurre con otras funcionalidades de HTML5, es necesario añadir
+          los
+          <strong>prefijos</strong> para que todos los navegadores entiendan
+          estos códigos. En este caso el proceso es todavía más extenso, ya que
+          hay que repetir
+          <strong>todo el bloque <code>@keyframes</code></strong> con cada
+          prefijo:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>@keyframes animacion_astronauta_complejo &#123; ... &#125;</code
+          ><br />
+          <br />
+          <code>@-webkit-keyframes animacion_astronauta_complejo &#123;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;0% &#123; -webkit-transform: rotate(0deg); top: 0px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;42% &#123; -webkit-transform: rotate(90deg); top: 57px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;60% &#123; -webkit-transform: rotate(90deg); top: 57px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;100% &#123; -webkit-transform: rotate(0deg); top: 0px;
+            &#125;</code
+          ><br />
+          <code>&#125;</code><br />
+          <br />
+          <code>@-moz-keyframes animacion_astronauta_complejo &#123;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;0% &#123; -moz-transform: rotate(0deg); top: 0px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;42% &#123; -moz-transform: rotate(90deg); top: 57px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;60% &#123; -moz-transform: rotate(90deg); top: 57px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;100% &#123; -moz-transform: rotate(0deg); top: 0px;
+            &#125;</code
+          ><br />
+          <code>&#125;</code><br />
+          <br />
+          <code>@-o-keyframes animacion_astronauta_complejo &#123;</code><br />
+          <code
+            >&nbsp;&nbsp;0% &#123; -o-transform: rotate(0deg); top: 0px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;42% &#123; -o-transform: rotate(90deg); top: 57px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;60% &#123; -o-transform: rotate(90deg); top: 57px;
+            &#125;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;100% &#123; -o-transform: rotate(0deg); top: 0px;
+            &#125;</code
+          ><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          Y la especificación de la animación en el selector del div, también
+          con todos los prefijos:
+        </p>
+
+        <div class="codigo-ejemplo">
+          <code>#astronauta-anim-complejo &#123;</code><br />
+          <code>&nbsp;&nbsp;animation: animacion_astronauta_complejo 2s;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;-webkit-animation: animacion_astronauta_complejo
+            2s;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;-moz-animation: animacion_astronauta_complejo 2s;</code
+          ><br />
+          <code
+            >&nbsp;&nbsp;-o-animation: animacion_astronauta_complejo 2s;</code
+          ><br />
+          <code>&#125;</code>
+        </div>
+
+        <p>
+          En este código todavía no se ha añadido el prefijo
+          <strong>-ms-</strong> para Internet Explorer, ya que este navegador no
+          soporta <code>animation</code>.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tutorial HTML5. Contacto: b.llamas@unimayor.edu.co</p>
+    </footer>
+  </body>
+</html>
